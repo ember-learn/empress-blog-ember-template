@@ -26,10 +26,8 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "autoprefixer": "^7.2.4",
     "broccoli-funnel": "^2.0.1",
     "case": "^1.5.4",
-    "cssnano": "^3.10.0",
     "debug": "^3.1.0",
     "downsize-cjs": "^0.1.1",
     "ember-cli-babel": "^6.6.0",
@@ -41,9 +39,6 @@
     "ember-meta": "^0.1.3",
     "ember-styleguide": "^2.3.3",
     "ember-truth-helpers": "^2.0.0",
-    "postcss-color-function": "^4.0.1",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0",
     "sass": "^1.14.3"
   },
   "devDependencies": {
