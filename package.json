@@ -1,5 +1,5 @@
 {
-  "name": "ember-ghost-casper-template",
+  "name": "ember-ghost-ember-template",
   "version": "2.0.3",
   "description": "Casper Template for Ember Ghost",
   "keywords": [
@@ -17,7 +17,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/stonecircle/ember-ghost-casper-template",
+  "repository": "https://github.com/ember-learn/ember-ghost-ember-template",
   "scripts": {
     "build": "ember build",
     "lint:js": "eslint ./*.js addon addon-test-support app blueprints config lib server test-support tests",
@@ -26,10 +26,8 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "autoprefixer": "^7.2.4",
     "broccoli-funnel": "^2.0.1",
     "case": "^1.5.4",
-    "cssnano": "^3.10.0",
     "debug": "^3.1.0",
     "downsize-cjs": "^0.1.1",
     "ember-cli-babel": "^6.6.0",
@@ -41,9 +39,6 @@
     "ember-meta": "^0.1.3",
     "ember-styleguide": "^2.3.3",
     "ember-truth-helpers": "^2.0.0",
-    "postcss-color-function": "^4.0.1",
-    "postcss-custom-properties": "^6.2.0",
-    "postcss-import": "^11.0.0",
     "sass": "^1.14.3"
   },
   "devDependencies": {
@@ -85,7 +80,6 @@
     "node": "6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "demoURL": "https://ember-ghost-casper-template.stonecircle.io"
+    "configPath": "tests/dummy/config"
   }
 }
