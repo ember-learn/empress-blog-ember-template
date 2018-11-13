@@ -1,136 +1,48 @@
-{{!< default}}
-
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
-
-<header class="site-header outer">
-    <div class="inner">
-        {{site-nav}}
+<article class="blog-post">
+    <div class="blog-post-header">
+      <% if current_page.data.tags.include? 'Newsletter' %>
+        <a class="blog-header" href="<%= tag_path 'Newsletter' %>" aria-label="Read more issues of The Ember Times">
+          <div class="large ember-times-logo"></div>
+        </a>
+      <% end %>
+      <h1 class="blog-post-title"><%= current_article.title %></h1>
+      <div class="blog-post-meta">
+        <% if current_page.data.author %>
+          <time class="blog-post-date"><%= current_article.date.strftime('%B %-d, %Y') %></time>
+          <div class="blog-post-author">By <%= current_page.data.author %></div>
+        <% end %>
+        <% if current_page.data.guestPost %>
+          <div class="blog-post-tag">Guest Post</div>
+        <% elsif current_page.data.syndicatedPost %>
+          <div class="blog-post-tag">Syndicated Post</div>
+        <% end %>
+      </div>
     </div>
-</header>
-
-{{!-- Everything inside the #post tags pulls data from the post --}}
-
-<main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-        <article class="post-full post {{unless model.post.image 'no-image'}}">
-            <header class="post-full-header">
-                <section class="post-full-meta">
-                    <time class="post-full-meta-date" datetime="{{moment-format model.post.date "YYYY-MM-DD"}}">{{moment-format model.post.date "D MMMM YYYY"}}</time>
-                    {{#if model.post.primaryTag}}
-                      <span class="date-divider">/</span> {{#link-to 'tag' model.post.primaryTag}} {{model.post.primaryTag}}{{/link-to}}
-                    {{/if}}
-                </section>
-                <h1 class="post-full-title">{{model.post.title}}</h1>
-            </header>
-
-            {{#if model.post.image}}
-              <figure class="post-full-image" style="background-image: url({{url model.post.image}})">
-              </figure>
-
-              {{image-attribution meta=model.post.imageMeta}}
-            {{/if}}
-
-            <section class="post-full-content">
-                {{markdown-to-html model.post.content}}
-            </section>
-
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{#if labs.subscribers}}
-            <section class="subscribe-form">
-                <h3 class="subscribe-form-title">Subscribe to {{blog.title}}</h3>
-                <p>Get the latest posts delivered right to your inbox</p>
-                {{subscribe_form placeholder="youremail@example.com"}}
-            </section>
-            {{/if}}
-
-            <footer class="post-full-footer">
-                <section class="author-card">
-                    {{#if model.post.author.image}}
-                        <img class="author-profile-image" src="{{model.post.author.image}}" alt="{{model.post.author.name}}" />
-                    {{/if}}
-                    <section class="author-card-content">
-                        <h4 class="author-card-name">{{#link-to 'author' model.post.author.id}}{{model.post.author.name}}{{/link-to}}</h4>
-                        {{#if model.post.author.content}}
-                            <p>{{markdown-to-html model.post.author.content.content}}</p>
-                        {{else}}
-                            <p>Read {{#link-to 'author' model.post.author.id}}more posts{{/link-to}} by this author.</p>
-                        {{/if}}
-                    </section>
-                </section>
-                <div class="post-full-footer-right">
-                    {{#link-to 'author' model.post.author.id class="author-card-button"}}Read More{{/link-to}}
-                </div>
-            </footer>
-
-            {{!--
-
-            If you use Disqus comments, just uncomment this block.
-            The only thing you need to change is "test-apkdzgmqhj" - which
-            should be replaced with your own Disqus site-id.
-
-            <section class="post-full-comments">
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = '{{url absolute="true"}}';
-                        this.page.identifier = 'ghost-{{comment_id}}';
-                    };
-                    (function() {
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://test-apkdzgmqhj.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-            </section>
-            --}}
-
-        </article>
-
+    <div class="blog-post-body" id="toc-content">
+      <%= yield %>
     </div>
-</main>
-
-{{!-- Links to Previous/Next posts --}}
-<aside class="read-next outer">
-    <div class="inner">
-        <div class="read-next-feed">
-          {{#if model.post.primaryTag}}
-              {{#if relatedPosts}}
-               <article class="read-next-card" style={{tagBackgroundImageStyle}}>
-                  <header class="read-next-card-header">
-                      <small class="read-next-card-header-sitetitle">&mdash; {{blog.title}} &mdash;</small>
-                      <h3 class="read-next-card-header-title"><a href="{{url}}">{{model.post.primaryTag}}</a></h3>
-                  </header>
-                  <div class="read-next-divider">{{svg-icons/infinity}}</div>
-                  <div class="read-next-card-content">
-                      <ul>
-                          {{#each (take 3 relatedPosts) as |post|}}
-                            <li>{{#link-to 'post' post.id}}{{post.title}}{{/link-to}}</li>
-                          {{/each}}
-                      </ul>
-                  </div>
-
-                  <footer class="read-next-card-footer">
-                      {{#link-to 'tag' model.post.primaryTag}} See all {{relatedPosts.length}} posts →{{/link-to}}
-                  </footer>
-              </article>
-              {{/if}}
-          {{/if}}
-
-            {{!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#if nextPost}}
-              {{post-card post=nextPost}}
-            {{/if}}
-
-
-            {{!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs --}}
-            {{#if prevPost}}
-                {{post-card post=prevPost}}
-            {{/if}}
-
+    <div class="blog-post-footer">
+      <% if current_page.data.syndicatedPost %>
+        <div class="original-post-url">
+          Original Posted at: <%= link_to(current_page.data.url, current_page.data.url) %>
         </div>
+      <% end %>
     </div>
-</aside>
+  </article>
+  <hr>
 
-{{floating-header post=model.post}}
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'emberblog'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <script type="text/javascript" src="/javascripts/toc.js"></script>
