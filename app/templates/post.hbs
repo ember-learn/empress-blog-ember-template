@@ -1,13 +1,13 @@
 <article class="blog-post">
     <div class="blog-post-header">
-      <% if current_page.data.tags.include? 'Newsletter' %>
+      {{!-- <% if current_page.data.tags.include? 'Newsletter' %>
         <a class="blog-header" href="<%= tag_path 'Newsletter' %>" aria-label="Read more issues of The Ember Times">
           <div class="large ember-times-logo"></div>
         </a>
-      <% end %>
-      <h1 class="blog-post-title"><%= current_article.title %></h1>
+      <% end %> --}}
+      <h1 class="blog-post-title">{{model.post.title}}</h1>
       <div class="blog-post-meta">
-        <% if current_page.data.author %>
+        {{!-- <% if current_page.data.author %>
           <time class="blog-post-date"><%= current_article.date.strftime('%B %-d, %Y') %></time>
           <div class="blog-post-author">By <%= current_page.data.author %></div>
         <% end %>
@@ -15,18 +15,18 @@
           <div class="blog-post-tag">Guest Post</div>
         <% elsif current_page.data.syndicatedPost %>
           <div class="blog-post-tag">Syndicated Post</div>
-        <% end %>
+        <% end %> --}}
       </div>
     </div>
     <div class="blog-post-body" id="toc-content">
-      <%= yield %>
+      {{markdown-to-html model.post.content}}
     </div>
     <div class="blog-post-footer">
-      <% if current_page.data.syndicatedPost %>
+      {{!-- <% if current_page.data.syndicatedPost %>
         <div class="original-post-url">
           Original Posted at: <%= link_to(current_page.data.url, current_page.data.url) %>
         </div>
-      <% end %>
+      <% end %> --}}
     </div>
   </article>
   <hr>

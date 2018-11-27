@@ -1,0 +1,11 @@
+.site-wrapper {
+  display: flex;
+}
+
+aside {
+  flex: 0 0 12em;
+}
+
+.main { 
+  flex: 1;
+}
