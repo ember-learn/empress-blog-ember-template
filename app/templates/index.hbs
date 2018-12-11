@@ -9,28 +9,34 @@
       </h2>
       <div class="blog-post-meta">
         <time class="blog-post-date">{{moment-format article.date 'MMM Do, YYYY'}}</time>
-        {{!-- <% if article.data.author %>
-          <div class="blog-post-author">By <%= article.data.author %></div>
-        <% end %>
-        <% if article.data.guestPost %>
+        {{#if article.author.name}}
+          <div class="blog-post-author">By {{article.author.name}}</div>
+        {{/if}}
+        {{!-- <% if article.data.guestPost %>
           <div class="blog-post-tag">Guest Post</div>
         <% elsif article.data.syndicatedPost %>
           <div class="blog-post-tag">Syndicated Post</div>
         <% end %> --}}
       </div>
     </div>
-    {{!-- <div class="blog-post-body">
-      <%= article.summary %>
+    <div class="blog-post-body">
+      {{excerpt article.html words="40"}}...
     </div>
     <div class="blog-post-footer">
+      {{#link-to 'post' article.id class='read-more'}}
+        Read more... 
+      {{/link-to}}
+      {{!--
       <%= link_to "Read more...", article, :class => "read-more" %>
       <% if article.data.syndicatedPost %>
       <div class="original-post-url">
         Original Posted at: <%= link_to(article.data.url, article.data.url) %>
       </div>
       <% end %>
-    </div> --}}
+       --}}
+    </div>
   </article>
+  <hr>
 {{/each}}
 {{!-- <div class="pagination">
    <% if prev_page %>

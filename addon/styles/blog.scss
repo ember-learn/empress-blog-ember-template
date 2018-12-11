@@ -1,7 +1,7 @@
 $small-breakpoint: 767px;
 $medium-breakpoint: 1119px;
 
-body.blog.responsive {
+body {
   box-sizing: border-box;
   padding: 0 !important;
   .content-wrapper {
@@ -137,7 +137,7 @@ body.blog.responsive {
   }
 
   .ember-times-logo {
-    background-image: url('/images/brand/ember_Times-Light.png');
+    background-image: url('/ember_Times-Light.png');
     background-position: left center;
     background-color: transparent;
     background-attachment: scroll;
@@ -154,35 +154,34 @@ body.blog.responsive {
   }
 }
 
-.blog {
-  .btn {
-    background-color: $orange;
-    border-radius: 5px;
-    box-shadow: 0 1px 0 rgba(255,255,255,0.35);
+.btn {
+  background-color: $orange;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.35);
+  color: $white;
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+  height: 40px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+  width: 220px;
+  
+  &:hover, &:focus {
+    background-color: $orange-darker;
+    border-bottom: none;
+    box-shadow: 0px 2px 4px -1px #666;
     color: $white;
-    display: block;
-    font-size: 0.9em;
-    font-weight: bold;
-    height: 40px;
-    letter-spacing: 1px;
-    line-height: 40px;
-    text-align: center;
     text-decoration: none;
-    text-transform: uppercase;
-    transition: all 0.3s ease 0s;
-    width: 220px;
-    
-    &:hover, &:focus {
-      background-color: $orange-darker;
-      border-bottom: none;
-      box-shadow: 0px 2px 4px -1px #666;
-      color: $white;
-      text-decoration: none;
-      transform: translateY(-1px);
-      transition: 0.3s translateY;
-    }
+    transform: translateY(-1px);
+    transition: 0.3s translateY;
   }
 }
+
 .blog-post {
   .blog-post-header {
     .blog-post-title {

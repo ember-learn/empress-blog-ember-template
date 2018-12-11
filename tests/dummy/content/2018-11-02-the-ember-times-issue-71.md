@@ -4,7 +4,14 @@ author: melanie
 #author: Chris Ng, Jessica Jordan, Ryan Mark, Kenneth Larsen, Alon Bukai, Amy Lam
 tags: Recent Posts, Newsletter, Ember.js Times, Ember Times, 2018
 alias : "blog/2018/11/02-the-ember-times-issue-71.html"
-responsive: true
+meta:
+  responsive: true
+---
+
+<a class="blog-header" href="/blog/tags/newsletter.html" aria-label="Read more issues of The Ember Times">
+  <div class="large ember-times-logo"></div>
+</a>
+
 ---
 
 Bonjour Emberistas! 🐹

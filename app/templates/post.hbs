@@ -5,12 +5,14 @@
           <div class="large ember-times-logo"></div>
         </a>
       <% end %> --}}
+
       <h1 class="blog-post-title">{{model.post.title}}</h1>
       <div class="blog-post-meta">
-        {{!-- <% if current_page.data.author %>
-          <time class="blog-post-date"><%= current_article.date.strftime('%B %-d, %Y') %></time>
-          <div class="blog-post-author">By <%= current_page.data.author %></div>
-        <% end %>
+        <time class="blog-post-date">{{moment-format model.post.date 'MMM Do, YYYY'}}</time>
+        {{#if model.post.author.name}}
+          <div class="blog-post-author">By {{model.post.author.name}}</div>
+        {{/if}}
+        {{!-- 
         <% if current_page.data.guestPost %>
           <div class="blog-post-tag">Guest Post</div>
         <% elsif current_page.data.syndicatedPost %>
