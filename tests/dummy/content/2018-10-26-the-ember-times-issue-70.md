@@ -1,8 +1,12 @@
 ---
 title: The Ember Times - Issue No. 70
 author: melanie
-#authors: Jen Weber, Chris Ng, Ryan Mark, Amy Lam, Jessica Jordan, Kenneth Larsen, Alon Bukai
-tags: Newsletter, Ember.js Times, Ember Times, 2018
+# authors: Jen Weber, Chris Ng, Ryan Mark, Amy Lam, Jessica Jordan, Kenneth Larsen, Alon Bukai
+tags: 
+  - Newsletter
+  - Ember.js Times
+  - Ember Times
+  - 2018
 alias : "blog/2018/10/26-the-ember-times-issue-70.html"
 responsive: true
 ---

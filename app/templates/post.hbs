@@ -1,10 +1,6 @@
 <article class="blog-post">
     <div class="blog-post-header">
-      {{!-- <% if current_page.data.tags.include? 'Newsletter' %>
-        <a class="blog-header" href="<%= tag_path 'Newsletter' %>" aria-label="Read more issues of The Ember Times">
-          <div class="large ember-times-logo"></div>
-        </a>
-      <% end %> --}}
+      {{ember-times-header tags=model.post.tags}}
 
       <h1 class="blog-post-title">{{model.post.title}}</h1>
       <div class="blog-post-meta">
