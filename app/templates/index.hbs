@@ -20,7 +20,11 @@
       </div>
     </div>
     <div class="blog-post-body">
-      {{excerpt article.html words="40"}}...
+      {{#if article.excerpt}}
+        {{markdown-to-html article.excerpt}}
+      {{else}}
+        {{excerpt article.html words="40"}}...
+      {{/if}}
     </div>
     <div class="blog-post-footer">
       {{#link-to 'post' article.id class='read-more'}}

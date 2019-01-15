@@ -2,6 +2,7 @@
 title: The Ember Times - Issue No. 70
 author: melanie
 # authors: Jen Weber, Chris Ng, Ryan Mark, Amy Lam, Jessica Jordan, Kenneth Larsen, Alon Bukai
+excerpt: This is a test... This week we have an Ember standard for i18n 🌍, more convenient **transitions** through your Ember apps with the **new Router Helpers & Element Modifiers RFC**, artisan ☕️ deprecations for **setting** your **component managers**, a **new version of Ember**, an exciting new Readers' Question 🤔 on the future of controllers, using GraphQL in Ember 💥, and more!
 tags: 
   - Newsletter
   - Ember.js Times
