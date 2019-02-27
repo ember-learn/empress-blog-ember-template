@@ -1,0 +1,7 @@
+By
+{{#each article.authors as |author index|}}
+  {{if index ','}}
+  {{#link-to "author" author.id class="blog-post-author"}}
+    {{author.name}}
+  {{/link-to}}
+{{/each}}

@@ -9,9 +9,8 @@
       </h2>
       <div class="blog-post-meta">
         <time class="blog-post-date">{{moment-format article.date 'MMM Do, YYYY'}}</time>
-        {{#if article.author.name}}
-          <div class="blog-post-author">By {{article.author.name}}</div>
-        {{/if}}
+        {{author-list article=article}}
+
         {{!-- <% if article.data.guestPost %>
           <div class="blog-post-tag">Guest Post</div>
         <% elsif article.data.syndicatedPost %>
