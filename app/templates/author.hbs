@@ -4,45 +4,44 @@
 {{!-- Everything inside the #author tags pulls data from the author --}}
 <header class="site-header outer {{unless model.coverImage 'no-cover'}}" style="{{if model.coverImage coverImageStyle}}">
     <div class="inner">
-        {{site-nav}}
-        <div class="site-header-content">
-            {{#if model.image}}
-                <img class="author-profile-image" src="{{model.image}}" alt="{{model.name}}" />
-            {{/if}}
-            <h1 class="site-title">{{model.name}}</h1>
-            {{#if model.content}}
-                <h2 class="author-bio">{{markdown-to-html model.content}}</h2>
-            {{/if}}
-            <div class="author-meta">
-                {{#if model.location}}
-                    <div class="author-location">{{model.location}} <span class="bull">&bull;</span></div>
+      <div class="site-header-content">
+          {{#if model.image}}
+              <img class="author-profile-image" src="{{model.image}}" alt="{{model.name}}" />
+          {{/if}}
+          <h1 class="site-title">{{model.name}}</h1>
+          {{#if model.content}}
+              <h2 class="author-bio">{{markdown-to-html model.content}}</h2>
+          {{/if}}
+          <div class="author-meta">
+              {{#if model.location}}
+                  <div class="author-location">{{model.location}} <span class="bull">&bull;</span></div>
+              {{/if}}
+              <div class="author-stats">
+                {{#if model.posts}}
+                  {{model.posts.length}} posts
+                {{else}}
+                  No posts
                 {{/if}}
-                <div class="author-stats">
-                  {{#if model.posts}}
-                    {{model.posts.length}} posts
-                  {{else}}
-                    No posts
-                  {{/if}}
-                  <span class="bull">&bull;</span>
-                </div>
-                {{#if model.website}}
-                    <a class="social-link social-link-wb" href="{{model.website}}" target="_blank" rel="noopener">{{svg-icons/website}}</a>
-                {{/if}}
-                {{#if model.twitter}}
-                    <a class="social-link social-link-tw" href="https://twitter.com/{{model.twitter}}" target="_blank" rel="noopener">{{svg-icons/twitter}}</a>
-                {{/if}}
-                {{#if model.facebook}}
-                    <a class="social-link social-link-fb" href="{{model.facebook}}" target="_blank" rel="noopener">{{svg-icons/facebook}}</a>
-                {{/if}}
-                {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
-            </div>
-
-            {{#if model.coverMeta.attributionLink}}
-              <div style="width:100%">
-                {{image-attribution meta=model.coverMeta}}
+                <span class="bull">&bull;</span>
               </div>
-            {{/if}}
-        </div>
+              {{#if model.website}}
+                  <a class="social-link social-link-wb" href="{{model.website}}" target="_blank" rel="noopener">{{svg-icons/website}}</a>
+              {{/if}}
+              {{#if model.twitter}}
+                  <a class="social-link social-link-tw" href="https://twitter.com/{{model.twitter}}" target="_blank" rel="noopener">{{svg-icons/twitter}}</a>
+              {{/if}}
+              {{#if model.facebook}}
+                  <a class="social-link social-link-fb" href="{{model.facebook}}" target="_blank" rel="noopener">{{svg-icons/facebook}}</a>
+              {{/if}}
+              {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
+          </div>
+
+          {{#if model.coverMeta.attributionLink}}
+            <div style="width:100%">
+              {{image-attribution meta=model.coverMeta}}
+            </div>
+          {{/if}}
+      </div>
     </div>
 </header>
 
@@ -54,7 +53,7 @@
             {{#each (sort-by 'date:desc' model.posts) as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{post-card post=post}}
+                {{post-card article=post}}
 
             {{/each}}
         </div>

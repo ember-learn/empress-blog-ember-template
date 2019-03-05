@@ -1,44 +1,6 @@
 <h1 class="text-left">News & Updates</h1>
 {{#each (sort-by 'date:desc' model) as |article|}}
-  <article class="blog-post">
-    <div class="blog-post-header">
-      <h2 class="blog-post-title">
-        {{#link-to 'post' article.id}}
-          {{article.title}}
-        {{/link-to}}
-      </h2>
-      <div class="blog-post-meta">
-        <time class="blog-post-date">{{moment-format article.date 'MMM Do, YYYY'}}</time>
-        {{author-list article=article}}
-
-        {{!-- <% if article.data.guestPost %>
-          <div class="blog-post-tag">Guest Post</div>
-        <% elsif article.data.syndicatedPost %>
-          <div class="blog-post-tag">Syndicated Post</div>
-        <% end %> --}}
-      </div>
-    </div>
-    <div class="blog-post-body">
-      {{#if article.excerpt}}
-        {{markdown-to-html article.excerpt}}
-      {{else}}
-        {{excerpt article.html words="40"}}...
-      {{/if}}
-    </div>
-    <div class="blog-post-footer">
-      {{#link-to 'post' article.id class='read-more'}}
-        Read more... 
-      {{/link-to}}
-      {{!--
-      <%= link_to "Read more...", article, :class => "read-more" %>
-      <% if article.data.syndicatedPost %>
-      <div class="original-post-url">
-        Original Posted at: <%= link_to(article.data.url, article.data.url) %>
-      </div>
-      <% end %>
-       --}}
-    </div>
-  </article>
+  {{post-card article=article}}
   <hr>
 {{/each}}
 {{!-- <div class="pagination">

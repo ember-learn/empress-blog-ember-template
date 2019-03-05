@@ -4,7 +4,8 @@ id: melanie
 image:
 cover:
 website:
-twitter:
+twitter: melaniersumner
 facebook:
-location:
+location: Chicago, IL
 ---
+lorem ipsum 123456

@@ -1,0 +1,1 @@
+export { default } from 'ember-ghost-ember-template/components/tag-sidebar';
