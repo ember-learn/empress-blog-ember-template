@@ -7,7 +7,6 @@ export default Component.extend({
   router: service(),
 
   showSidebar: computed('router.currentRouteName', function() {
-    console.log(this.router.currentRouteName);
     if (this.router.currentRouteName === 'author') {
 
       return false;
