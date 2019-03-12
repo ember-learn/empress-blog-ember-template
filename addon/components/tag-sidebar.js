@@ -6,9 +6,10 @@ import { computed } from '@ember/object';
 export default Component.extend({
   router: service(),
 
-  // not working
-  showSidebar: computed('router.currentRoute', function() {
-    if (this.router.currentRoute === 'author') {
+  showSidebar: computed('router.currentRouteName', function() {
+    console.log(this.router.currentRouteName);
+    if (this.router.currentRouteName === 'author') {
+
       return false;
     } 
     return true;
