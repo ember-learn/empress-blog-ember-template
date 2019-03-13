@@ -1,1 +1,1 @@
-export { default } from 'ember-ghost-ember-template/components/tag-sidebar';
+export { default } from 'empress-blog-ember-template/components/tag-sidebar';

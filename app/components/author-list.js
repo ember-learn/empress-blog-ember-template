@@ -1,1 +1,1 @@
-export { default } from 'ember-ghost-ember-template/components/author-list';
+export { default } from 'empress-blog-ember-template/components/author-list';
