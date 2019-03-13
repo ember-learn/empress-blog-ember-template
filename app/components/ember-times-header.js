@@ -1,1 +1,1 @@
-export { default } from 'ember-ghost-ember-template/components/ember-times-header';
+export { default } from 'empress-blog-ember-template/components/ember-times-header';

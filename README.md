@@ -1,9 +1,9 @@
-# ember-ghost-ember-template
+# empress-blog-ember-template
 
-This is a custom template for the [Ember Blog](https://emberjs.com/blog ) designed to work with [Ember Ghost](https://github.com/stonecircle/ember-ghost)
+This is a custom template for the [Ember Blog](https://blog.emberjs.com) designed to work with [empress-blog](https://github.com/stonecircle/empress-blog)
 
 For more information about Ember Ghost [read the Ember Ghost
-documentation](https://github.com/empress/ember-ghost/blob/master/README.md) but if you want to
+documentation](https://github.com/empress/empress-blog/blob/master/README.md) but if you want to
 get started straight away, try the quick start below.
 
 
@@ -16,7 +16,7 @@ npm install -g ember-cli
 ember new super-blog
 cd super-blog
 
-ember install ember-ghost ember-ghost-ember-template
+ember install empress-blog empress-blog-ember-template
 ```
 
 It will ask you if you want to update the `index.html` file and you should say yes 👍
