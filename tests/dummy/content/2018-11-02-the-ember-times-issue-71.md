@@ -8,12 +8,6 @@ meta:
   responsive: true
 ---
 
-<a class="blog-header" href="/blog/tags/newsletter.html" aria-label="Read more issues of The Ember Times">
-  <div class="large ember-times-logo"></div>
-</a>
-
----
-
 Bonjour Emberistas! 🐹
 
 This week your **help is needed** to bring **tree-shaking** 🌳 to Ember apps! RFCs on **route actions** and **dynamic tags** are ready for **your comments** 📢. We're also highlighting **Ember for CodeSandbox** ✨, and the awesome **#30DaysOfEmber** 📆 series. Read on!
