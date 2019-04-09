@@ -9,19 +9,19 @@
           <li class="list-item"><a href="<%= tag_path 'Recent posts'%>">More Recent Posts...</a></li>
       </ul>
 
-      {{!-- <h3 class="list-group-title" id="releases">Releases</h3>
+      <h3 class="list-group-title" id="releases">Releases</h3>
       <ul class="list-group" aria-labelledby="releases">
-          <% blog.tags['Releases'].sort_by(&:date).reverse.take(3).each_with_index do |article, i| %>
+          {{!-- <% blog.tags['Releases'].sort_by(&:date).reverse.take(3).each_with_index do |article, i| %>
           <li class='list-item'><%= link_to article.title, article %></li>
-          <% end %>
+          <% end %> --}}
           <li class="list-item"><a href="<%= tag_path 'Releases'%>">More Releases...</a></li>
       </ul>
 
       <h3 class="list-group-title" id="newsletter">Ember.js Times</h3>
       <ul class="list-group" aria-labelledby="newsletter">
-          <% blog.tags['Newsletter'].sort_by(&:date).reverse.take(3).each_with_index do |article, i| %>
+          {{!-- <% blog.tags['Newsletter'].sort_by(&:date).reverse.take(3).each_with_index do |article, i| %>
           <li class='list-item'><%= link_to article.title, article %></li>
-          <% end %>
+          <% end %> --}}
           <li class="list-item"><a href="<%= tag_path 'Newsletter'%>">More Issues...</a></li>
       </ul>
 
@@ -62,7 +62,7 @@
           <li class="list-item list-inline">
           <a href="<%= tag_path 'version 3.x'%>">3.x</a>
           </li>
-      </ul> --}}
+      </ul>
 
       <h3 class="list-group-title" id="browse-subject">Browse by Subject</h3>
       <ul class="list-group" aria-labelledby="browse-subject">
