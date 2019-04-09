@@ -21,7 +21,6 @@
   position: relative;
   padding-top: 12px;
   padding-bottom: 12px;
-  color: #fff;
   background: color(var(--darkgrey) l(-5%)) no-repeat center center;
   background-size: cover;
 }
@@ -61,7 +60,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10vw 4vw;
   min-height: 200px;
   max-height: 450px;
   text-align: center;
@@ -73,6 +71,7 @@
   padding: 0;
   font-size: 3.8rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .site-logo {
@@ -149,6 +148,10 @@
 .site-header-content .author-location svg {
   height: 1.9rem;
   stroke: #fff;
+}
+
+.author-location .author-stats {
+  color: black !important;
 }
 
 .site-header-content .bull {

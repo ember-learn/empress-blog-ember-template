@@ -1,11 +1,11 @@
 ---
 name: Melanie Sumner
 id: melanie
-image:
-cover:
-website:
+image: /images/melsumner.jpeg
+cover: 
+website: melsumner.com
 twitter: melaniersumner
-facebook:
+facebook: https://github.com/MelSumner
 location: Chicago, IL
 ---
-lorem ipsum 123456
+Software Engineer. #A11y advocate. @emberjs core team member. Judge at @cssdesignawards. Probably a hedge witch. Unapologetically awesome.
