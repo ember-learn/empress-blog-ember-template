@@ -3,16 +3,20 @@
   {{post-card article=article}}
   <hr>
 {{/each}}
-{{!-- <div class="pagination">
-   <% if prev_page %>
-      <a class="newer-posts" href="<%= prev_page.url %>">Newer articles</a>
-    <% else %>
-      <a class="newer-posts disabled" href="#" aria-disabled="true">Newer articles</a>
-    <% end %>
-   <p class="page-number">Page <%= page_number %> of <%= num_pages %></p>
-    <% if next_page %>
-      <a class="older-posts" href="<%= next_page.url %>">Older articles</a>
-    <% end %>
-</div>
+<div class="index-pagination">
+  {{#if model.links.prev}}
+    {{#link-to 'index' (query-params page=model.links.prev) class="newer-posts"}}
+      Newer articles
+    {{/link-to}}
+  {{else}}
+    <a class="newer-posts disabled" href="javascript:void(0)" aria-disabled="true">Newer articles</a>
+  {{/if}}
 
-<% partial_for :sidebar, 'sidebar' %> --}}
+  <span class="page-number">Page {{pageNumber}} of {{numerOfPages}}</span>
+
+  {{#if model.links.next}}
+    {{#link-to 'index' (query-params page=model.links.next) class="older-posts"}}
+      Older articles
+    {{/link-to}}
+  {{/if}}
+</div>
