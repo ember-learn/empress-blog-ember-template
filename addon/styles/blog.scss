@@ -1,6 +1,49 @@
 $small-breakpoint: 767px;
 $medium-breakpoint: 1119px;
 
+.index-pagination {
+  padding-left: 0;
+  list-style: none;
+  align-items: space-between;
+
+  color: #9EABB3;
+  font-size: 1.1em;
+  margin: 40px auto 20px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  justify-content: space-between;
+
+  a {
+    position: absolute;
+    display: inline-block;
+
+    &.older-posts {
+      right: 0;
+    }
+
+    &.newer-posts {
+      left: 0;
+
+      &.disabled {
+        color: $gray-lighter;
+
+        &:hover,
+        &:focus {
+          cursor: not-allowed;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .page-number {
+    display: inline-block;
+    color: #333;
+    margin: 0;
+  }
+}
+
 body {
   box-sizing: border-box;
   padding: 0 !important;
@@ -88,45 +131,7 @@ body {
 
       @media screen and (max-width: $small-breakpoint) {
         width: 100% !important;
-        padding: 1rem; 
-      }
-    }
-    
-    .pagination {
-      color: #9EABB3;
-      font-size: 1.1em;
-      margin: 40px auto 20px;
-      position: relative;
-      text-align: center;
-      width: 100%;
-      
-      a {
-        position: absolute;
-        display: inline-block;
-
-        &.older-posts {
-          right: 0;
-        }
-
-        &.newer-posts {
-          left: 0;
-          
-          &.disabled {
-            color: $gray-lighter;
-            
-            &:hover,
-            &:focus {
-              cursor: not-allowed;
-              text-decoration: none;
-            }
-          }
-        }
-      }
-
-      .page-number {
-        display: inline-block;
-        color: #333;
-        margin: 0;
+        padding: 1rem;
       }
     }
   }
@@ -170,7 +175,7 @@ body {
   text-transform: uppercase;
   transition: all 0.3s ease 0s;
   width: 220px;
-  
+
   &:hover, &:focus {
     background-color: $orange-darker;
     border-bottom: none;
@@ -201,7 +206,7 @@ body {
       .blog-post-date {
         display: inline-block;
         color: $gray;
-        padding: 0 0.25em 0 0;  
+        padding: 0 0.25em 0 0;
       }
       .blog-post-author {
         display: inline-block;

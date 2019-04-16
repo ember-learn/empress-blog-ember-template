@@ -1,0 +1,6 @@
+<section class="error-message">
+    {{log model}}
+    <h1 class="error-code">{{model.errors.0.status}}</h1>
+    <p class="error-description">{{model.errors.0.title}}</p>
+    {{#link-to 'index' class="error-link"}}Go to the front page →{{/link-to}}
+</section>
