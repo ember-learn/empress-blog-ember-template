@@ -60,7 +60,7 @@
     "ember-data": "~2.18.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
-    "empress-blog": "^1.4.0",
+    "empress-blog": "empress/empress-blog#pair/tag-work",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-moment": "^7.7.0",
