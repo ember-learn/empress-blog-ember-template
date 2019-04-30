@@ -1,7 +1,8 @@
 ---
 title: Ember 3.5 Released
 author: melanie
-tags: Releases, 2018, 3, 3.5
+tags:
+  - getting-started
 responsive: true
 ---
 

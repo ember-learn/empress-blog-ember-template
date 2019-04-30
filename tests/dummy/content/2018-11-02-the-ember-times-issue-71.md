@@ -2,7 +2,8 @@
 title: The Ember Times - Issue No. 71
 author: melanie
 #author: Chris Ng, Jessica Jordan, Ryan Mark, Kenneth Larsen, Alon Bukai, Amy Lam
-tags: Recent Posts, Newsletter, Ember.js Times, Ember Times, 2018
+tags:
+  - getting-started
 alias : "blog/2018/11/02-the-ember-times-issue-71.html"
 meta:
   responsive: true
