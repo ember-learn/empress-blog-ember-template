@@ -28,7 +28,8 @@ module.exports = function(environment) {
       navigation: [
         { label: 'Home', route: 'index' },
         { label: 'Built by Stone Circle', route: 'page', id: 'stone-circle' }
-      ]
+      ],
+      paginate: true,
     },
   };
 
