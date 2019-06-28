@@ -1,0 +1,5 @@
+---
+name: Announcements
+image:
+imageMeta:
+---
