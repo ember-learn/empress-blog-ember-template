@@ -1,5 +1,5 @@
 <h1 class="text-left">News & Updates</h1>
-{{#each (sort-by 'date:desc' model) as |article|}}
+{{#each (sort-by 'date:asc' model) as |article|}}
   {{post-card article=article}}
   <hr>
 {{/each}}
