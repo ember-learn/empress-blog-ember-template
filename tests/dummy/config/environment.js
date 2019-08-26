@@ -6,10 +6,11 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
+        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
@@ -21,15 +22,22 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+
     blog: {
-      title: "ember ghost casper template",
-      description: "The Casper theme for Ember Ghost",
-      coverImage: "/images/blog-cover.jpg",
-      navigation: [
-        { label: 'Home', route: 'index' },
-        { label: 'Built by Stone Circle', route: 'page', id: 'stone-circle' }
-      ]
-    },
+      title: 'empress-blog Ember template',
+      description: 'Ember template for the empress-blog Static Blog System',
+      coverImage: '/images/blog-cover.jpg',
+
+      navigation: [{
+        label: 'Home',
+        route: 'index'
+      }, {
+        label: 'Built by Chris Manson',
+        route: 'page',
+        id: 'chris-manson'
+      }],
+      paginate: true,
+    }
   };
 
   if (environment === 'development') {

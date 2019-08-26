@@ -1,7 +1,12 @@
 ---
 title: Ember 3.5 Released
 author: melanie
-tags: Releases, 2018, 3, 3.5
+tags:
+  - releases
+  - "2018"
+  - "3"
+  - "3.5"
+date: 2018-10-15T00:00:00.000Z
 responsive: true
 ---
 
