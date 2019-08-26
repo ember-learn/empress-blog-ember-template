@@ -1,4 +1,5 @@
-# empress-blog-ember-template
+empress-blog-ember-template
+==============================================================================
 
 This is a custom template for the [Ember Blog](https://blog.emberjs.com) designed to work with [empress-blog](https://github.com/stonecircle/empress-blog)
 
@@ -7,8 +8,16 @@ documentation](https://github.com/empress/empress-blog/blob/master/README.md) bu
 get started straight away, try the quick start below.
 
 
-## Quick Start
+Compatibility
+------------------------------------------------------------------------------
 
+* Ember.js v3.4 or above
+* Ember CLI v2.13 or above
+* Node.js v8 or above
+
+
+Quick Start
+------------------------------------------------------------------------------
 ```sh
 # if you don't have ember-cli installed already
 npm install -g ember-cli
@@ -23,3 +32,14 @@ It will ask you if you want to update the `index.html` file and you should say y
 
 If you want to see the blog system running on your local machine just run `npm start` and you will
 be able to navigate to  [http://localhost:4200](http://localhost:4200) to see the blog in action.
+
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
+
+This project is licensed under the [MIT License](LICENSE.md).
