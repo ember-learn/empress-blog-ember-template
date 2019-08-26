@@ -35,7 +35,8 @@ module.exports = function(environment) {
         label: 'Built by Chris Manson',
         route: 'page',
         id: 'chris-manson'
-      }]
+      }],
+      paginate: true,
     }
   };
 

@@ -1,14 +1,13 @@
 ---
 title: The Ember Times - Issue No. 70
-authors: 
+authors:
   - melanie
   - jen
 excerpt: This is a test... This week we have an Ember standard for i18n 🌍, more convenient **transitions** through your Ember apps with the **new Router Helpers & Element Modifiers RFC**, artisan ☕️ deprecations for **setting** your **component managers**, a **new version of Ember**, an exciting new Readers' Question 🤔 on the future of controllers, using GraphQL in Ember 💥, and more!
-tags: 
-  - Newsletter
-  - Ember.js Times
-  - Ember Times
-  - 2018
+tags:
+  - newsletter
+  - "2018"
+date: 2018-10-26T00:00:00.000Z
 alias : "blog/2018/10/26-the-ember-times-issue-70.html"
 responsive: true
 ---
