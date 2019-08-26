@@ -24,7 +24,7 @@
         <div class="post-feed">
             {{#each model.posts as |post|}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{post-card post=post}}
+                {{post-card article=post}}
             {{/each}}
         </div>
     </div>

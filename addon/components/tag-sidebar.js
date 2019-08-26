@@ -24,7 +24,7 @@ export default Component.extend({
   }),
 
   yearTags: filter('tags.[]', function(tag) {
-    console.log(tag.id, tag.id.match(/^20\d\d$/))
+    // console.log(tag.id, tag.id.match(/^20\d\d$/))
     return tag.id.match(/^20\d\d$/);
   }),
 
