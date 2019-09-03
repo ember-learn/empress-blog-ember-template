@@ -28,15 +28,33 @@ export default Component.extend({
     return tag.id.match(/^20\d\d$/);
   }),
 
-  versionTags: filter('tags.[]', function(chore, index, array) {
-    
+  specificVersionTags: filter('tags.[]', function(tag) {
+    return tag.id.match(/^3.\d$/) || tag.id.match(/^2.\d$/) || tag.id.match(/^1.\d$/)
+  }),
+
+  versionTags: filter('tags.[]', function(tag) {
+    let versionTags = [
+      "3",
+      "2",
+      "1",
+      "version-1-x",
+      "version-2-x",
+      "version-3-x"
+    ]
+
+    let allIgnoredTags = [
+      ... versionTags,
+      ... this.specificVersionTags.map(tag => tag.id)
+    ]
+
+    return allIgnoredTags.includes(tag.id);
   }),
 
   showSidebar: computed('router.currentRouteName', function() {
     if (this.router.currentRouteName === 'author') {
 
       return false;
-    } 
+    }
     return true;
   }),
 
