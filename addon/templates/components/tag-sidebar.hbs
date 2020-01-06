@@ -12,7 +12,9 @@
     <h3 class="list-group-title" id="releases">Releases</h3>
     <ul class="list-group" aria-labelledby="releases">
       {{#each this.specificVersionTags as |tag|}}
-      <li class="list-item">{{#link-to "tag" tag}}{{tag.name}}{{/link-to}}</li>
+      {{#each tag.posts as |post|}}
+      <li class="list-item">{{#link-to "post" post}}{{post.title}}{{/link-to}}</li>
+      {{/each}}
       {{/each}}
       <li class="list-item"><a href="<%= tag_path 'Releases'%>">More Releases...</a></li>
     </ul>
@@ -21,9 +23,11 @@
     <ul class="list-group" aria-labelledby="newsletter">
       {{#each this.newsletterTags as |tag|}}
       {{#each tag.posts as |post|}}
-      <li class="list-item">{{#link-to "tag" post}}{{post.title}}{{/link-to}}</li>
+      <li class="list-item">{{#link-to "post" post}}{{post.title}}{{/link-to}}</li>
       {{/each}}
       {{/each}}
+      <li class="list-item"><a href="<%= tag_path 'Newsletter'%>">More Newsletters...</a></li>
+
     </ul>
 
 
