@@ -7,11 +7,10 @@ import { filter } from '@ember/object/computed';
 export default Component.extend({
   router: service(),
 
-  fiteredTags: filter('tags.[]', ['yearTags'], function(tag) {
+  fiteredTags: filter('tags.[]', ['yearTags'], function (tag) {
     let individualIgnoredTags = [
       'releases',
       'new',
-      'newsletter',
     ];
 
     let allIgnoredTags = [
@@ -23,16 +22,22 @@ export default Component.extend({
     return !allIgnoredTags.includes(tag.id);
   }),
 
-  yearTags: filter('tags.[]', function(tag) {
+  yearTags: filter('tags.[]', function (tag) {
     // console.log(tag.id, tag.id.match(/^20\d\d$/))
     return tag.id.match(/^20\d\d$/);
   }),
 
-  specificVersionTags: filter('tags.[]', function(tag) {
+  specificVersionTags: filter('tags.[]', function (tag) {
     return tag.id.match(/^3.\d$/) || tag.id.match(/^2.\d$/) || tag.id.match(/^1.\d$/)
   }),
 
-  versionTags: filter('tags.[]', function(tag) {
+  newsletterTags: filter('tags.[]', function (tag) {
+    if (tag.id.match(/^newsletter/)) {
+      return tag;
+    }
+  }),
+
+  versionTags: filter('tags.[]', function (tag) {
     let versionTags = [
       "3",
       "2",
@@ -43,14 +48,14 @@ export default Component.extend({
     ]
 
     let allIgnoredTags = [
-      ... versionTags,
+      ...versionTags,
       ... this.specificVersionTags.map(tag => tag.id)
     ]
 
     return allIgnoredTags.includes(tag.id);
   }),
 
-  showSidebar: computed('router.currentRouteName', function() {
+  showSidebar: computed('router.currentRouteName', function () {
     if (this.router.currentRouteName === 'author') {
 
       return false;
