@@ -3,29 +3,29 @@
 
 {{!-- The big featured header, it uses blog cover image as a BG if available --}}
 <header class="site-header outer {{if tag.feature_image 'no-cover'}}" style="{{if tag.feature_image coverImageStyle}}">
-    <div class="inner">
-        {{site-nav}}
-        <div class="site-header-content">
-            <h1 class="site-title">{{titleize model.tag}}</h1>
-            <h2 class="site-description">
-                {{#if tag.description}}
-                    {{tag.description}}
-                {{else}}
-                    A collection of {{model.posts.length}} posts
-                {{/if}}
-            </h2>
-        </div>
+  <div class="inner">
+    <div class="site-header-content">
+      {{log model}}
+      <h1 class="site-title">{{titleize model.name}}</h1>
+      <h2 class="site-description">
+        {{#if model.content}}
+        {{model.content}}
+        {{else}}
+        A collection of {{model.posts.length}} posts
+        {{/if}}
+      </h2>
     </div>
+  </div>
 </header>
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer" role="main">
-    <div class="inner">
-        <div class="post-feed">
-            {{#each model.posts as |post|}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{post-card article=post}}
-            {{/each}}
-        </div>
+  <div class="inner">
+    <div class="post-feed">
+      {{#each model.posts as |post|}}
+      {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+      {{post-card article=post}}
+      {{/each}}
     </div>
+  </div>
 </main>

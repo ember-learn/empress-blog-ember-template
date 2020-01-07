@@ -16,7 +16,7 @@
       <li class="list-item">{{#link-to "post" post}}{{post.title}}{{/link-to}}</li>
       {{/each}}
       {{/each}}
-      <li class="list-item"><a href="<%= tag_path 'Releases'%>">More Releases...</a></li>
+      <li class="list-item">{{#link-to "tag" "releases"}}More Releases...{{/link-to}}</li>
     </ul>
 
     <h3 class="list-group-title" id="newsletter">Ember.js Times</h3>
@@ -25,8 +25,9 @@
       {{#each tag.posts as |post|}}
       <li class="list-item">{{#link-to "post" post}}{{post.title}}{{/link-to}}</li>
       {{/each}}
+
       {{/each}}
-      <li class="list-item"><a href="<%= tag_path 'Newsletter'%>">More Newsletters...</a></li>
+      <li class="list-item">{{#link-to "tag" "newsletter"}}More Newsletters...{{/link-to}}</li>
 
     </ul>
 
@@ -37,7 +38,7 @@
       <li class="list-item">{{#link-to 'tag' tag}}{{tag.name}}{{/link-to}}</li>
       {{/each}}
 
-      <li class="list-item"><a href="<%= tag_path 'Releases'%>">More Releases...</a></li>
+      <li class="list-item">{{#link-to "tag" "releases"}}More Releases...{{/link-to}}</li>
 
     </ul>
 
@@ -57,16 +58,8 @@
     <h3 class="list-group-title" id="browse-subject">Browse by Subject</h3>
     <ul class="list-group" aria-labelledby="browse-subject">
       {{#each fiteredTags as |tag|}}
-      <li class="list-item">{{#link-to 'tag' tag}}{{tag.name}}{{/link-to}}</li>
+      <li class="list-item">{{#link-to "tag" tag}}{{tag.name}}{{/link-to}}</li>
       {{/each}}
-      {{!-- <li class="list-item"><a href="<%= tag_path 'Announcement'%>">Announcements</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Ember CLI'%>">Ember CLI</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Ember Data'%>">Ember Data</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Newsletter'%>">Newsletter</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Performance'%>">Performance</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Roadmap'%>">Roadmap</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Security'%>">Security</a></li>
-          <li class="list-item"><a href="<%= tag_path 'Testing'%>">Testing</a></li> --}}
     </ul>
   </div>
 </aside>
