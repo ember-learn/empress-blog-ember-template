@@ -1,22 +1,22 @@
 <h1 class="text-left">News & Updates</h1>
 {{#each (sort-by 'date:asc' model) as |article|}}
-  {{post-card article=article}}
-  <hr>
+{{post-card article=article}}
+<hr>
 {{/each}}
 <div class="index-pagination">
   {{#if model.links.prev}}
-    {{#link-to 'index' (query-params page=model.links.prev) class="newer-posts"}}
-      Newer articles
-    {{/link-to}}
+  {{#link-to 'index' (query-params page=model.links.prev) class="newer-posts"}}
+  Newer articles
+  {{/link-to}}
   {{else}}
-    <a class="newer-posts disabled" href="javascript:void(0)" aria-disabled="true">Newer articles</a>
+  <a class="newer-posts disabled" href="javascript:void(0)" aria-disabled="true">Newer articles</a>
   {{/if}}
 
   <span class="page-number">Page {{pageNumber}} of {{numerOfPages}}</span>
 
   {{#if model.links.next}}
-    {{#link-to 'index' (query-params page=model.links.next) class="older-posts"}}
-      Older articles
-    {{/link-to}}
+  {{#link-to 'index' (query-params page=model.links.next) class="older-posts"}}
+  Older articles
+  {{/link-to}}
   {{/if}}
 </div>
