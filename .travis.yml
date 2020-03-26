@@ -36,7 +36,8 @@ jobs:
       name: "Tests"
       script:
         - npm run lint
-        - npm run test:ember
+        - npx percy exec -- npm run test:ember
+      env: PERCY_TOKEN=ce5e8d59a35851ea07032b21668a6718e8daf4ac8da2f4f3fdcafc8c89dd0a0f
 
     - stage: "Additional Tests"
       name: "Floating Dependencies"
