@@ -1,18 +1,14 @@
-import Component from '@ember/component';
-import layout from '../templates/components/tag-sidebar';
+import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
 
-export default Component.extend({
-  router: service(),
+export default class TagSidebarComponent extends Component {
+  @service router;
 
-  showSidebar: computed('router.currentRouteName', function() {
+  get showSidebar() {
     if (this.router.currentRouteName === 'author') {
 
       return false;
-    } 
+    }
     return true;
-  }),
-
-  layout
-});
+  }
+}
