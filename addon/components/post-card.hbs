@@ -7,7 +7,7 @@
       </h2>
       <div class="blog-post-meta">
       <time class="blog-post-date">{{moment-format @post.date 'MMM Do, YYYY'}}</time>
-      <AuthorList @post=@post />
+      <AuthorList @post={{@post}} />
 
       {{!-- <% if article.data.guestPost %>
           <div class="blog-post-tag">Guest Post</div>

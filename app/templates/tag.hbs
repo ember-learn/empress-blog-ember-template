@@ -1,19 +1,19 @@
 
-{{#let model.tag as |tag|}}
+{{#let @model.tag as |tag|}}
 <header class="page-head">
     <h1 class="page-head-title">{{tag}}</h1>
     <p class="page-head-description">
         {{#if tag.description}}
             {{tag.description}}
         {{else}}
-            A collection of {{plural model.posts.length empty='posts' singular='% post' plural='% posts'}}
+            A collection of {{plural @model.posts.length empty='posts' singular='% post' plural='% posts'}}
         {{/if}}
     </p>
 </header>
 {{/let}}
 
 <div class="post-feed">
-{{#each model.posts as |post|}}
+{{#each @model.posts as |post|}}
 
     {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
     <PostCard @post={{post}} />

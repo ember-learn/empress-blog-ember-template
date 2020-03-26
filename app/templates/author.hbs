@@ -2,45 +2,39 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{!-- Everything inside the #author tags pulls data from the author --}}
-<header class="site-header outer {{unless model.coverImage 'no-cover'}}" style="{{if model.coverImage coverImageStyle}}">
+<header class="site-header outer {{unless @model.coverImage 'no-cover'}}">
     <div class="inner">
       <div class="site-header-content">
-          {{#if model.image}}
-              <img class="author-profile-image" src="{{model.image}}" alt="{{model.name}}" />
+          {{#if @model.image}}
+              <img class="author-profile-image" src="{{@model.image}}" alt="{{@model.name}}" />
           {{/if}}
-          <h1 class="site-title">{{model.name}}</h1>
-          {{#if model.content}}
-              <h2 class="author-bio">{{markdown-to-html model.content}}</h2>
+          <h1 class="site-title">{{@model.name}}</h1>
+          {{#if @model.content}}
+              <h2 class="author-bio">{{markdown-to-html @model.content}}</h2>
           {{/if}}
           <div class="author-meta">
-              {{#if model.location}}
-                  <div class="author-location">{{model.location}} <span class="bull">&bull;</span></div>
+              {{#if @model.location}}
+                  <div class="author-location">{{@model.location}} <span class="bull">&bull;</span></div>
               {{/if}}
               <div class="author-stats">
-                {{#if model.posts}}
-                  {{model.posts.length}} posts
+                {{#if @model.posts}}
+                  {{@model.posts.length}} posts
                 {{else}}
                   No posts
                 {{/if}}
                 <span class="bull">&bull;</span>
               </div>
-              {{#if model.website}}
-                  <a class="social-link social-link-wb" href="{{model.website}}" target="_blank" rel="noopener"><SvgIcons::Website /></a>
+              {{#if @model.website}}
+                  <a class="social-link social-link-wb" href="{{@model.website}}" target="_blank" rel="noopener noreferrer"><SvgIcons::Website /></a>
               {{/if}}
-              {{#if model.twitter}}
-                  <a class="social-link social-link-tw" href="https://twitter.com/{{model.twitter}}" target="_blank" rel="noopener"><SvgIcons::Twitter /></a>
+              {{#if @model.twitter}}
+                  <a class="social-link social-link-tw" href="https://twitter.com/{{@model.twitter}}" target="_blank" rel="noopener noreferrer"><SvgIcons::Twitter /></a>
               {{/if}}
-              {{#if model.facebook}}
-                  <a class="social-link social-link-fb" href="{{model.facebook}}" target="_blank" rel="noopener"><SvgIcons::Facebook /></a>
+              {{#if @model.facebook}}
+                  <a class="social-link social-link-fb" href="{{@model.facebook}}" target="_blank" rel="noopener noreferrer"><SvgIcons::Facebook /></a>
               {{/if}}
-              {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
+              {{!-- <a class="social-link social-link-rss" href="http://cloud.feedly.com/#subscription/feed/{{@model.url}}/rss/" target="_blank" rel="noopener">{{svg-icons/rss}}</a> --}}
           </div>
-
-          {{#if model.coverMeta.attributionLink}}
-            <div style="width:100%">
-              <ImageAttribution @meta={{model.coverMeta}} />
-            </div>
-          {{/if}}
       </div>
     </div>
 </header>
@@ -50,7 +44,7 @@
     <div class="inner">
 
         <div class="post-feed">
-            {{#each (sort-by 'date:desc' model.posts) as |post|}}
+            {{#each (sort-by 'date:desc' @model.posts) as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 <PostCard @article={{post}} />
