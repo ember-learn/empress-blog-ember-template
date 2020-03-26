@@ -1,19 +1,19 @@
 {{#es-header}}
-    {{#es-navbar}}
-    {{/es-navbar}}
 {{/es-header}}
 
-<div class="site-wrapper container">
-    
-    
-    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    <div class='main'>
-        {{outlet}}
-    </div>
+<main>
+  <div class="site-wrapper container">
 
-    {{tag-sidebar}}
 
-</div>
+      {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+      <div class='main'>
+          {{outlet}}
+      </div>
+
+      {{tag-sidebar}}
+
+  </div>
+</main>
 
 {{es-footer}}
 
