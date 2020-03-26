@@ -4,7 +4,7 @@
 <header class="page-head error-head">
     <h1 class="page-head-title">{{error.status}}</h1>
     <p class="page-head-description">{{error.title}}</p>
-    {{#link-to 'index'}}Go to the front page →{{/link-to}}
+    <LinkTo @route="index">Go to the front page →</LinkTo>
 </header>
 
 {{/let}}

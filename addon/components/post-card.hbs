@@ -1,9 +1,9 @@
 <article class="blog-post">
   <div class="blog-post-header">
       <h2 class="blog-post-title">
-      {{#link-to 'post' @post.id}}
+      <LinkTo @route="post" @model={{@post.id}}>
           {{@post.title}}
-      {{/link-to}}
+      </LinkTo>
       </h2>
       <div class="blog-post-meta">
       <time class="blog-post-date">{{moment-format @post.date 'MMM Do, YYYY'}}</time>
@@ -24,9 +24,9 @@
       {{/if}}
   </div>
   <div class="blog-post-footer">
-      {{#link-to 'post' @post.id class='read-more'}}
+      <LinkTo @route="post" @model={{@post.id}} class="read-more">
         Read more...
-      {{/link-to}}
+      </LinkTo>
       {{!--
       <%= link_to "Read more...", article, :class => "read-more" %>
       <% if article.data.syndicatedPost %>
