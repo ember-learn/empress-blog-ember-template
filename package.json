@@ -19,12 +19,14 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "ember build",
+    "build": "ember build --environment=production",
+    "lint": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test",
-    "test:all": "ember try:each"
+    "test": "npm-run-all lint:* test:*",
+    "test:ember": "ember test",
+    "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
     "broccoli-funnel": "^2.0.1",

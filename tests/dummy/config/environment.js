@@ -26,17 +26,6 @@ module.exports = function(environment) {
     blog: {
       title: 'empress-blog Ember template',
       description: 'Ember template for the empress-blog Static Blog System',
-      coverImage: '/images/blog-cover.jpg',
-
-      navigation: [{
-        label: 'Home',
-        route: 'index'
-      }, {
-        label: 'Built by Chris Manson',
-        route: 'page',
-        id: 'chris-manson'
-      }],
-      paginate: true,
     }
   };
 

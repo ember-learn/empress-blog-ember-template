@@ -3,7 +3,7 @@ empress-blog-ember-template
 
 This is a custom template for the [Ember Blog](https://blog.emberjs.com) designed to work with [empress-blog](https://github.com/stonecircle/empress-blog)
 
-For more information about Ember Ghost [read the Ember Ghost
+For more information about empress-blog [read the empress-blog
 documentation](https://github.com/empress/empress-blog/blob/master/README.md) but if you want to
 get started straight away, try the quick start below.
 
@@ -11,9 +11,9 @@ get started straight away, try the quick start below.
 Compatibility
 ------------------------------------------------------------------------------
 
-* Ember.js v3.4 or above
+* Ember.js v3.12 or above
 * Ember CLI v2.13 or above
-* Node.js v8 or above
+* Node.js v10 or above
 
 
 Quick Start
