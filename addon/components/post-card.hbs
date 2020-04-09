@@ -1,13 +1,13 @@
 <article class="blog-post">
   <div class="blog-post-header">
       <h2 class="blog-post-title">
-      {{#link-to 'post' article.id}}
-          {{article.title}}
-      {{/link-to}}
+      <LinkTo @route="post" @model={{@post.id}}>
+          {{@post.title}}
+      </LinkTo>
       </h2>
       <div class="blog-post-meta">
-      <time class="blog-post-date">{{moment-format article.date 'MMM Do, YYYY'}}</time>
-      {{author-list article=article}}
+      <time class="blog-post-date">{{moment-format @post.date 'MMM Do, YYYY'}}</time>
+      <AuthorList @post={{@post}} />
 
       {{!-- <% if article.data.guestPost %>
           <div class="blog-post-tag">Guest Post</div>
@@ -17,16 +17,16 @@
       </div>
   </div>
   <div class="blog-post-body">
-      {{#if article.excerpt}}
-        {{markdown-to-html article.excerpt}}
+      {{#if @post.excerpt}}
+        {{markdown-to-html @post.excerpt}}
       {{else}}
-        {{excerpt article.html words="40"}}...
+        {{excerpt @post.html words="40"}}...
       {{/if}}
   </div>
   <div class="blog-post-footer">
-      {{#link-to 'post' article.id class='read-more'}}
-        Read more... 
-      {{/link-to}}
+      <LinkTo @route="post" @model={{@post.id}} class="read-more">
+        Read more...
+      </LinkTo>
       {{!--
       <%= link_to "Read more...", article, :class => "read-more" %>
       <% if article.data.syndicatedPost %>

@@ -1,6 +1,6 @@
 
-{{#let model.post as |post|}}
-<article class="post-content {{post_class}} {{unless post.image 'no-image'}}">
+{{#let @model.post as |post|}}
+<article class="post-content {{unless post.image 'no-image'}}">
 
     <header class="post-content-header">
         <h1 class="post-content-title">{{post.title}}</h1>
@@ -8,7 +8,7 @@
 
     {{#if post.image}}
     <div class="post-content-image">
-        <img class="kg-image" src={{post.image}} alt={{title}} />
+        <img class="kg-image" src={{post.image}} alt={{post.title}} />
     </div>
     {{/if}}
 
