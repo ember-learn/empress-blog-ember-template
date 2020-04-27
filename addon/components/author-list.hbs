@@ -1,7 +1,7 @@
 By
-{{#each @post.authors as |author index|}}
+{{#each @post.authors as |author index|~}}
   {{if index ','}}
   <LinkTo @route="author" @model={{author.id}} class="blog-post-author">
-    {{author.name}}
+    {{~author.name~}}
   </LinkTo>
-{{/each}}
+{{~/each}}
