@@ -1,7 +1,7 @@
 empress-blog-ember-template
 ==============================================================================
 
-This is a custom template for the [Ember Blog](https://blog.emberjs.com) designed to work with [empress-blog](https://github.com/stonecircle/empress-blog)
+This is a custom template for the [Ember Blog](https://blog.emberjs.com) designed to work with [empress-blog](https://github.com/empress/empress-blog).
 
 For more information about empress-blog [read the empress-blog
 documentation](https://github.com/empress/empress-blog/blob/master/README.md) but if you want to
