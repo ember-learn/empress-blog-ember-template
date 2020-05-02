@@ -1,0 +1,41 @@
+<div class="tag-post-list">
+  <h3
+    id={{this.titleId}}
+    class="text-lg tag-post-list-title"
+    data-test-tag-name
+  >
+    {{@tag.name}}
+  </h3>
+
+  {{get @tag.posts '1'}}
+
+  <ul
+    class="list-unstyled ml-1"
+    aria-labelledby={{this.titleId}}
+    data-test-post-list
+  >
+    {{#each this.topPosts key="id" as |post|}}
+      <li class="my-1">
+        <LinkTo
+          class="tag-post-list-link"
+          data-test-post-link
+          @route="post"
+          @model={{post.id}}
+        >
+          {{post.title}}
+        </LinkTo>
+      </li>
+    {{/each}}
+  </ul>
+
+  <div class="mt-1 ml-1">
+    <LinkTo
+      class="tag-post-list-link"
+      data-test-more-posts
+      @route="tag"
+      @model={{@tag.id}}
+    >
+      More {{@tag.name}}...
+    </LinkTo>
+  </div>
+</div>
