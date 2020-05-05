@@ -2,6 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
+import percySnapshot from '@percy/ember';
 
 const POST = { id: 'why-ember', title: 'Why Ember' };
 
@@ -29,6 +30,8 @@ module('Integration | Component | tag-post-list', function(hooks) {
     this.set('tag', TAG);
 
     await render(hbs`<TagPostList @tag={{tag}} />`);
+
+    await percySnapshot('Component - tag-post-list');
 
     assert.dom('[data-test-tag-name]').hasText(TAG.name);
   });
