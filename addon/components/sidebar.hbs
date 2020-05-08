@@ -1,0 +1,22 @@
+<EsButton
+  class="sidebar-toggle"
+  aria-label="Toggle Sidebar"
+  title="Toggle Sidebar"
+  {{on "click" this.toggle}}
+>
+  O
+</EsButton>
+<aside class="sidebar {{if this.isOpen "open"}}" ...attributes>
+  <header>
+    <EsButton
+      @secondary={{true}}
+      class="sidebar-close"
+      aria-label="Toggle Sidebar"
+      title="Toggle Sidebar"
+      {{on "click" this.close}}
+    >
+      X
+    </EsButton>
+  </header>
+  {{yield}}
+</aside>

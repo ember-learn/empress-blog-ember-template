@@ -1,0 +1,52 @@
+.sidebar-toggle,
+.sidebar > header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+
+    border-radius: 999px;
+  }
+
+  .sidebar {
+    --sidebar-padding: 1rem;
+
+    box-sizing: border-box;
+    position: fixed;
+    top: var(--sidebar-padding);
+    left: var(--sidebar-padding);
+    height: calc(100% - var(--sidebar-padding) * 2);
+    width: calc(100vw - var(--sidebar-padding) * 2);
+    background: #FFF;
+    border-radius: 0.5rem;
+    overflow-y: auto;
+    padding: 1rem;
+
+    display: none;
+  }
+
+  .sidebar > header {
+    display: flex;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+  }
+
+  .sidebar-close {
+
+  }
+
+  .sidebar.open {
+    display: block;
+  }
+}
