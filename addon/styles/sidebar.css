@@ -1,5 +1,5 @@
 .sidebar-toggle,
-.sidebar > header {
+.sidebar-close {
   display: none;
 }
 
@@ -49,7 +49,7 @@
     width: calc(100vw - var(--sidebar-padding) * 2);
     overflow-y: auto;
 
-    padding: 0 1rem 1rem;
+    padding: 1rem;
     background: #FFF;
     border-radius: var(--radius);
     box-shadow: none;
@@ -65,17 +65,15 @@
   }
 
   .sidebar > header {
-    display: flex;
-    justify-content: flex-end;
+    display: inline-flex;
+    float: right;
     position: sticky;
     top: 0;
     z-index: 1;
     background: #FFF;
-    margin: 0 -1rem;
-    padding: 0.5rem;
   }
 
   .sidebar-close {
-
+    display: block;
   }
 }
