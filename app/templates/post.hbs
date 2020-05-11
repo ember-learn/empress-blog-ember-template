@@ -1,13 +1,5 @@
 {{#let @model.post as |post|}}
 <article class="post-content {{unless post.image 'no-image'}}">
-    {{!-- 
-    {{#if post.image}}
-    <div class="post-content-image">
-        <img class="kg-image" src={{post.image}} alt={{post.title}} />
-    </div>
-    {{/if}}
-    --}}
-
     <header class="post-content-header">
         <h1 class="post-content-title bold">{{post.title}}</h1>
     </header>
@@ -24,9 +16,3 @@
     <hr class="my-6">
 </article>
 {{/let}}
-
-{{!--
-<section class="post-content-comments">
-    If you want to embed comments, this is a good place to do it!
-</section>
---}}
