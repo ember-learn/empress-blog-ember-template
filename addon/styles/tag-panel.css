@@ -1,0 +1,13 @@
+.tag-panel .tag-panel-group:not(:last-child) {
+  margin-bottom: var(--spacing-4);
+}
+
+.tag-panel .tag-panel-group-title {
+  color: var(--color-gray-600);
+}
+
+.tag-panel .tag-panel-inline-group {
+  display: inline-grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: var(--spacing-1) var(--spacing-2);
+}
