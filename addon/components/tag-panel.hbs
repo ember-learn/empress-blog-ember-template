@@ -1,35 +1,35 @@
 <div class="tag-panel p-2 bg-none">
   {{#if this.recentPostsTag}}
-    <div class="tag-panel-group">
+    <section class="tag-panel-section" data-test-recent-posts>
       <TagPostList @tag={{this.recentPostsTag}}></TagPostList>
-    </div>
+    </section>
   {{/if}}
 
   {{#if this.releasesTag}}
-    <div class="tag-panel-group">
+    <section class="tag-panel-section" data-test-releases>
       <TagPostList @tag={{this.releasesTag}}></TagPostList>
-    </div>
+    </section>
   {{/if}}
 
   {{#if this.emberTimesTag}}
-    <div class="tag-panel-group">
+    <section class="tag-panel-section" data-test-ember-times>
       <TagPostList @tag={{this.emberTimesTag}}></TagPostList>
-    </div>
+    </section>
   {{/if}}
 
  {{#if this.yearTags.length}}
-    <div class="tag-panel-group" data-test-year-group>
+    <section class="tag-panel-section" data-test-by-year>
       <h3
-        id="year-tag-group-title"
-        class="tag-panel-group-title text-lg"
-        data-test-tag-name
+        id="by-year-tag-section-title"
+        class="tag-panel-section-title text-lg"
+        data-test-section-title
       >
         By Year
       </h3>
 
       <ul
-        class="tag-panel-inline-group list-unstyled ml-1"
-        aria-labelledby="year-tag-group-title"
+        class="tag-panel-list-inline list-unstyled ml-1"
+        aria-labelledby="by-year-tag-section-title"
         data-test-tag-list
       >
         {{#each this.yearTags as |yearTag|}}
@@ -44,22 +44,22 @@
           </li>
         {{/each}}
       </ul>
-    </div>
+    </section>
   {{/if}}
 
   {{#if this.versionTags.length}}
-    <div class="tag-panel-group" data-test-version-group>
+    <section class="tag-panel-section" data-test-by-version>
       <h3
-        id="version-tag-group-title"
-        class="tag-panel-group-title text-lg"
-        data-test-tag-name
+        id="by-version-tag-section-title"
+        class="tag-panel-section-title text-lg"
+        data-test-section-title
       >
         By Major Version
       </h3>
 
       <ul
-        class="tag-panel-inline-group list-unstyled ml-1"
-        aria-labelledby="version-tag-group-title"
+        class="tag-panel-inline-section list-unstyled ml-1"
+        aria-labelledby="by-version-tag-section-title"
         data-test-tag-list
       >
         {{#each this.versionTags as |versionTag|}}
@@ -74,22 +74,22 @@
           </li>
         {{/each}}
       </ul>
-    </div>
+    </section>
   {{/if}}
 
   {{#if this.subjectTags.length}}
-    <div class="tag-panel-group" data-test-subject-group>
+    <section class="tag-panel-section" data-test-by-subject>
       <h3
-        id="subject-tag-group-title"
-        class="tag-panel-group-title text-lg"
-        data-test-tag-name
+        id="by-subject-tag-section-title"
+        class="tag-panel-section-title text-lg"
+        data-test-section-title
       >
         By Subject
       </h3>
 
       <ul
         class="list-unstyled ml-1"
-        aria-labelledby="subject-tag-group-title"
+        aria-labelledby="by-subject-tag-section-title"
         data-test-tag-list
       >
         {{#each this.subjectTags as |subjectTag|}}
@@ -104,6 +104,6 @@
           </li>
         {{/each}}
       </ul>
-    </div>
+    </section>
   {{/if}}
 </div>
