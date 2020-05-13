@@ -32,7 +32,7 @@
         aria-labelledby="year-tag-group-title"
         data-test-tag-list
       >
-        {{#each this.yearTags key="id" as |yearTag|}}
+        {{#each this.yearTags as |yearTag|}}
           <li>
             <LinkTo
               data-test-tag-link
@@ -62,7 +62,7 @@
         aria-labelledby="version-tag-group-title"
         data-test-tag-list
       >
-        {{#each this.versionTags key="id" as |versionTag|}}
+        {{#each this.versionTags as |versionTag|}}
           <li>
             <LinkTo
               data-test-tag-link
@@ -92,7 +92,7 @@
         aria-labelledby="subject-tag-group-title"
         data-test-tag-list
       >
-        {{#each this.subjectTags key="id" as |subjectTag|}}
+        {{#each this.subjectTags as |subjectTag|}}
           <li class="my-1">
             <LinkTo
               data-test-tag-link
