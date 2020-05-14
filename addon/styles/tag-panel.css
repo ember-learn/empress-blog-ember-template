@@ -1,0 +1,13 @@
+.tag-panel .tag-panel-section:not(:last-child) {
+  margin-bottom: var(--spacing-4);
+}
+
+.tag-panel .tag-panel-section-title {
+  color: var(--color-gray-600);
+}
+
+.tag-panel .tag-panel-list-inline {
+  display: inline-grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: var(--spacing-1) var(--spacing-2);
+}
