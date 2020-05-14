@@ -47,7 +47,7 @@
             {{#each (sort-by 'date:desc' @model.posts) as |post|}}
 
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                <PostCard @article={{post}} />
+                <PostCard @post={{post}} />
 
             {{/each}}
         </div>
