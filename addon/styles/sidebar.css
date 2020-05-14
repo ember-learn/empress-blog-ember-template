@@ -9,7 +9,34 @@
   --sidebar-transition-duration: .3s;
 }
 
+.sidebar-container {
+  max-width: var(--container-width);
+  margin: auto;
+  display: grid;
+  grid-template-areas: "main" "nav";
+  grid-template-columns: 1fr 234px;
+  grid-gap: 32px;
+  padding: var(--spacing-6) var(--grid-margin);
+}
+
+.sidebar-container > main {
+  grid-area: "main";
+}
+
+.sidebar-container > nav {
+  grid-area: "nav";
+}
+
+.bg-main {
+  background-color: var(--color-gray-100);
+}
+
 @media (max-width: 768px) {
+  .sidebar-container {
+    display: block;
+    padding: var(--spacing-4) var(--grid-margin);
+  }
+
   .sidebar-toggle {
     position: fixed;
     bottom: 30px;
