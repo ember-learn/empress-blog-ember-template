@@ -1,0 +1,24 @@
+<EsButton
+  class="sidebar-toggle"
+  aria-label="Toggle Sidebar"
+  title="Toggle Sidebar"
+  {{on "click" this.toggle}}
+>
+  {{svg-jar "sidebar"}}
+</EsButton>
+<nav class="sidebar {{if this.isOpen "open"}}" ...attributes>
+  <header>
+    <EsButton
+      @secondary={{true}}
+      class="sidebar-close"
+      aria-label="Toggle Sidebar"
+      title="Toggle Sidebar"
+      {{on "click" this.close}}
+    >
+      X
+    </EsButton>
+  </header>
+  <div class="sidebar-content">
+    {{yield}}
+  </div>
+</nav>

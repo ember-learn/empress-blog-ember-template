@@ -1,17 +1,5 @@
-
-{{#if (route-is "index")}}
-    {{#if this.blog.description}}
-    <header class="page-head">
-        <h2 class="page-head-title">{{this.blog.description}}</h2>
-    </header>
-    {{/if}}
-{{/if}}
-
 <div class="post-feed">
-{{#each (sort-by 'date:desc' @model) as |post index|}}
-
-    {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+  {{#each (sort-by 'date:desc' @model) as |post index|}}
     <PostCard @post={{post}} @index={{index}}/>
-
-{{/each}}
+  {{/each}}
 </div>

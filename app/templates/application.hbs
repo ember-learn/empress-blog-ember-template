@@ -1,17 +1,13 @@
 <EsHeader />
 
-<main>
-  <div class="site-wrapper container">
+<div class="bg-main">
+  <div class="sidebar-container">
+    <main>
+      {{outlet}}
+    </main>
 
-
-      {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-      <div class='main'>
-          {{outlet}}
-      </div>
-
-      <TagSidebar />
-
+    <TagSidebar @tags={{this.model.tags}}/>
   </div>
-</main>
+</div>
 
 <EsFooter />
