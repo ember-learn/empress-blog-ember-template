@@ -6,7 +6,7 @@
 >
   {{svg-jar "sidebar"}}
 </EsButton>
-<aside class="sidebar {{if this.isOpen "open"}}" ...attributes>
+<nav class="sidebar {{if this.isOpen "open"}}" ...attributes>
   <header>
     <EsButton
       @secondary={{true}}
@@ -19,4 +19,4 @@
     </EsButton>
   </header>
   {{yield}}
-</aside>
+</nav>
