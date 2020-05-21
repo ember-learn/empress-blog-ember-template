@@ -85,19 +85,10 @@
     transition: box-shadow var(--sidebar-transition-duration);
   }
 
-  .sidebar.open {
+  .sidebar[aria-expanded=true] {
     display: block;
     animation: var(--sidebar-transition-duration) sidebar-in ease-out forwards;
     box-shadow: var(--sidebar-shadow);
-  }
-
-  .sidebar > header {
-    display: inline-flex;
-    float: right;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background: #FFF;
   }
 
   .sidebar-content {
@@ -105,6 +96,11 @@
   }
 
   .sidebar-close {
-    display: block;
+    display: inline-flex;
+    float: right;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #FFF;
   }
 }
