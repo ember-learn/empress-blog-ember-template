@@ -2,7 +2,8 @@
   class="sidebar-toggle"
   aria-label="Toggle Sidebar"
   title="Toggle Sidebar"
-  {{on "click" this.toggle}}
+  @type="button"
+  @onClicked={{this.toggle}}
 >
   {{svg-jar "sidebar"}}
 </EsButton>
@@ -13,7 +14,8 @@
       class="sidebar-close"
       aria-label="Toggle Sidebar"
       title="Toggle Sidebar"
-      {{on "click" this.close}}
+      @type="button"
+      @onClicked={{this.close}}
     >
       X
     </EsButton>
