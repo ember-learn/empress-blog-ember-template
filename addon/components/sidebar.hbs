@@ -1,7 +1,8 @@
 <EsButton
   class="sidebar-toggle"
   aria-label="Toggle Sidebar"
-  {{on "click" this.toggle}}
+  @type="button"
+  @onClicked={{this.toggle}}
 >
   {{svg-jar "sidebar" aria-hidden="true"}}
 </EsButton>
@@ -10,7 +11,8 @@
     @secondary={{true}}
     class="sidebar-close"
     aria-label="Close Sidebar"
-    {{on "click" this.close}}
+    @type="button"
+    @onClicked={{this.close}}
   >
     X
   </EsButton>

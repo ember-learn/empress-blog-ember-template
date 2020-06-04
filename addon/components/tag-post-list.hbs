@@ -12,7 +12,7 @@
     aria-labelledby={{this.titleId}}
     data-test-post-list
   >
-    {{#each this.topPosts key="id" as |post|}}
+    {{#each this.topPosts as |post|}}
       <li class="my-1">
         <LinkTo
           class="tag-post-list-link"

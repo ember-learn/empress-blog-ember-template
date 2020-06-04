@@ -3,8 +3,8 @@ import Component from '@glimmer/component';
 const recentPostsTagId = 'new';
 const releasesTagId = 'releases';
 const emberTimesTagId = 'newsletter';
-const versionTagIds = ['version-3.x', 'version-2.x', 'version-1.x'];
-const yearTagIds = ['2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012'];
+const versionTagIds = ['version-3-x', 'version-2-x', 'version-1-x'];
+const yearTagIds = ['2020', '2019', '2018', '2017', '2016', '2015', '2014', '2013', '2012'];
 
 /**
  * Displays tags orginized in groups.

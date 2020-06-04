@@ -26,6 +26,7 @@ module.exports = function(environment) {
     blog: {
       title: 'empress-blog Ember template',
       description: 'Ember template for the empress-blog Static Blog System',
+      paginate: true,
     }
   };
 

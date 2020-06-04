@@ -1,6 +1,6 @@
 {
   "name": "empress-blog-ember-template",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Ember template for empress-blog",
   "keywords": [
     "ember-addon",
@@ -65,7 +65,7 @@
     "ember-template-lint": "^2.4.0",
     "ember-test-selectors": "^4.0.0",
     "ember-try": "^1.4.0",
-    "empress-blog": "^1.7.2",
+    "empress-blog": "^1.8.1",
     "eslint": "^6.8.0",
     "eslint-plugin-ember": "^7.10.1",
     "eslint-plugin-node": "^11.0.0",
