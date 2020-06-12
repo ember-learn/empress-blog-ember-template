@@ -54,7 +54,7 @@ module('Integration | Component | tag-post-list', function(hooks) {
 
     assert.dom('[data-test-post-link]').hasTagName('a');
     assert.dom('[data-test-post-link]').hasAttribute('href', `/welcome`);
-    assert.dom('[data-test-post-link]').containsText('Welcome to empress-blog');
+    assert.dom('[data-test-post-link]').containsText('Welcome to empress-blog'); // NOTE: this string has a non-breaking space
     assert.dom('[data-test-post-list]').hasAttribute('aria-labelledby', `getting-started-tag`);
     assert.dom('[data-test-more-posts]').containsText(`More Getting Started...`);
   });
