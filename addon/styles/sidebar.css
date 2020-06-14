@@ -31,6 +31,10 @@
   background-color: var(--color-gray-100);
 }
 
+.sidebar-container img {
+  max-width: 100%;
+}
+
 @media (max-width: 768px) {
   .sidebar-container {
     display: block;
