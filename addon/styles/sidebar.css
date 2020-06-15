@@ -13,7 +13,7 @@
   max-width: var(--container-width);
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 234px;
+  grid-template-columns: minmax(0, 1fr) 234px;
   grid-gap: 32px;
   padding: var(--spacing-6) var(--grid-margin);
 }
