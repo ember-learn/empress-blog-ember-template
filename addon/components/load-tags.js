@@ -31,7 +31,7 @@ export default class LoadTagsComponent extends Component {
   async loadInitial() {
     this.posts = [];
     this.page = 1;
-    this.posts = await this.args.tag.posts;
+    this.posts = (await this.args.tag.posts).sortBy('date').reverse();
   }
 
   @action
