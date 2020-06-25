@@ -1,0 +1,15 @@
+<div {{did-update this.loadInitial @tag.id}}>
+  {{#if this.visiblePosts.length}}
+    {{yield this.visiblePosts}}
+
+    {{#if (gt this.totalPosts this.postAmount)}}
+      <div class="text-center">
+        <button class="es-button" {{on "click" this.loadMore}}>Load more</button>
+      </div>
+    {{/if}}
+  {{else}}
+    <div class="text-center py-5">
+      Loading...
+    </div>
+  {{/if}}
+</div>
