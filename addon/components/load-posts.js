@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-export default class LoadTagsComponent extends Component {
+export default class LoadPostsComponent extends Component {
   @service store;
 
   @tracked posts = [];
@@ -18,20 +18,20 @@ export default class LoadTagsComponent extends Component {
   }
 
   get totalPosts () {
-    return this.args.tag.hasMany('posts').ids().length;
+    return this.args.model.hasMany('posts').ids().length;
   }
 
   constructor() {
     super(...arguments);
 
-    this.loadInitial(this.args.tag);
+    this.loadInitial(this.args.model);
   }
 
   @action
-  async loadInitial() {
+  async loadInitial(model) {
     this.posts = [];
     this.page = 1;
-    this.posts = (await this.args.tag.posts).sortBy('date').reverse();
+    this.posts = (await model.posts).sortBy('date').reverse();
   }
 
   @action
