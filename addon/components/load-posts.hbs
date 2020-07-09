@@ -8,7 +8,7 @@
 
     {{#if (gt this.totalPosts this.postAmount)}}
       <div class="text-center">
-        <button class="es-button" {{on "click" this.loadMore}}>Load more</button>
+        <button type="button" class="es-button" {{on "click" this.loadMore}}>Load more</button>
       </div>
     {{/if}}
   {{else}}
