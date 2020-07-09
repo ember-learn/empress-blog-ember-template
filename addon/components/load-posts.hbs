@@ -1,7 +1,7 @@
 <div {{did-update (fn this.loadInitial @model) @model}}>
   {{#if this.loadInitialTask.isRunning}}
     <div class="text-center py-5">
-      Loading...
+      {{svg-jar "spinner" class="spinner" aria-label="Loading..."}}
     </div>
   {{else if this.visiblePosts.length}}
     {{yield this.visiblePosts}}
