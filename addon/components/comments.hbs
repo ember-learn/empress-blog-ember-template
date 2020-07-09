@@ -1,0 +1,13 @@
+<section class="post-content-comments">
+  {{#if this.useDiscourse}}
+    <div id="discourse-comments" {{did-insert this.setupDiscourse}}></div>
+  {{else}}
+    <div id="disqus_thread" {{did-insert this.setupDisqus}}></div>
+    <noscript>
+      Please enable JavaScript to view the
+      <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+        comments powered by Disqus.
+      </a>
+    </noscript>
+  {{/if}}
+</section>
