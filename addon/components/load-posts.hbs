@@ -1,5 +1,9 @@
-<div {{did-update this.loadInitial @model}}>
-  {{#if this.visiblePosts.length}}
+<div {{did-update (fn this.loadInitial @model) @model}}>
+  {{#if this.loadInitialTask.isRunning}}
+    <div class="text-center py-5">
+      Loading...
+    </div>
+  {{else if this.visiblePosts.length}}
     {{yield this.visiblePosts}}
 
     {{#if (gt this.totalPosts this.postAmount)}}
@@ -9,7 +13,7 @@
     {{/if}}
   {{else}}
     <div class="text-center py-5">
-      Loading...
+      No posts found.
     </div>
   {{/if}}
 </div>
