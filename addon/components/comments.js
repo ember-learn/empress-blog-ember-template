@@ -27,7 +27,7 @@ export default class CommentsComponent extends Component {
       discourseEmbedUrl: this.oldStylePostUrl
     };
 
-    this.injectScript(DiscourseEmbed.discourseUrl + 'javascripts/embed.js');
+    this.injectScript(window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js');
   }
 
   @action

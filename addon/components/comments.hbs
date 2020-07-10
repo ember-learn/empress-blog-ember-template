@@ -1,5 +1,5 @@
 <section class="post-content-comments mt-5">
-  {{#if showComments}}
+  {{#if this.showComments}}
     {{#if this.useDiscourse}}
       <div id="discourse-comments" {{did-insert this.setupDiscourse}}></div>
     {{else}}
