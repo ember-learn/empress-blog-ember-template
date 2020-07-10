@@ -1,13 +1,21 @@
 <section class="post-content-comments mt-5">
-  {{#if this.useDiscourse}}
-    <div id="discourse-comments" {{did-insert this.setupDiscourse}}></div>
+  {{#if showComments}}
+    {{#if this.useDiscourse}}
+      <div id="discourse-comments" {{did-insert this.setupDiscourse}}></div>
+    {{else}}
+      <div id="disqus_thread" {{did-insert this.setupDisqus}}></div>
+      <noscript>
+        Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+          comments powered by Disqus.
+        </a>
+      </noscript>
+    {{/if}}
   {{else}}
-    <div id="disqus_thread" {{did-insert this.setupDisqus}}></div>
-    <noscript>
-      Please enable JavaScript to view the
-      <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-        comments powered by Disqus.
-      </a>
-    </noscript>
+  <ul class="list-unstyled layout">
+    <EsCard>
+      Comments Disabled in Developmenet and Test mode
+    </EsCard>
+  </ul>
   {{/if}}
 </section>

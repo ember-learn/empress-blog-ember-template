@@ -2,8 +2,14 @@ import Component from '@glimmer/component';
 import moment from 'moment';
 import { action } from '@ember/object';
 
+import { environment } from 'ember-get-config';
+
 export default class CommentsComponent extends Component {
   scriptElementRef = null;
+
+  get showComments () {
+    return environment === 'production';
+  }
 
   get useDiscourse() {
     return moment('2019-01-01').isBefore(this.args.post.date);
