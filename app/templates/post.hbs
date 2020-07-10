@@ -1,35 +1,30 @@
-
 {{#let @model.post as |post|}}
-<article class="post-content {{unless post.image 'no-image'}}">
+  <article class="post-content {{unless post.image 'no-image'}}">
 
     <header class="post-content-header">
-        <h1 class="post-content-title">{{post.title}}</h1>
+      <h1 class="post-content-title">{{post.title}}</h1>
     </header>
 
     {{#if post.image}}
-    <div class="post-content-image">
+      <div class="post-content-image">
         <img class="kg-image" src={{post.image}} alt={{post.title}} />
-    </div>
+      </div>
     {{/if}}
 
     <div class="post-content-body">
-        {{markdown-to-html post.content tagName=""}}
+      {{markdown-to-html post.content tagName=""}}
     </div>
 
     <footer class="post-content-footer">
 
-        {{!-- There are two options for how we display the byline/author-info.
+      {{!-- There are two options for how we display the byline/author-info.
         If the post has more than one author, we load a specific template
         from includes/byline-multiple.hbs, otherwise, we just use the
         default byline. --}}
 
     </footer>
 
-    {{!--
-    <section class="post-content-comments">
-        If you want to embed comments, this is a good place to do it!
-    </section>
-    --}}
+    <Comments @post={{post}} />
 
-</article>
+  </article>
 {{/let}}
