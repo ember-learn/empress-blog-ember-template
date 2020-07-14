@@ -2,13 +2,13 @@ import Component from '@glimmer/component';
 import moment from 'moment';
 import { action } from '@ember/object';
 
-import { environment } from 'ember-get-config';
+import config from 'ember-get-config';
 
 export default class CommentsComponent extends Component {
   scriptElementRef = null;
 
   get showComments () {
-    return environment === 'production';
+    return config.environment === 'production';
   }
 
   get useDiscourse() {
