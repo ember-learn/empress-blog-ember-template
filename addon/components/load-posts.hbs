@@ -6,7 +6,7 @@
   {{else if this.visiblePosts.length}}
     {{yield this.visiblePosts}}
 
-    {{#if (gt this.totalPosts this.postAmount)}}
+    {{#if this.showLoadMoreButton}}
       <div class="text-center">
         <button type="button" class="es-button" {{on "click" this.loadMore}}>Load more</button>
       </div>
