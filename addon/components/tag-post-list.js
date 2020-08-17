@@ -1,8 +1,8 @@
 import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
-
-import DS from 'ember-data';
+import { task } from 'ember-concurrency';
+import withTestWaiter from 'ember-concurrency-test-waiter/with-test-waiter';
 
 const topPostCount = 3;
 
@@ -23,13 +23,13 @@ export default class TagPostList extends Component {
     super(...arguments);
 
     let ids = this.args.tag.hasMany('posts').ids().slice(0, topPostCount);
-
-    let promise = Promise.all(ids.map(id => this.store.findRecord('content', id)));
-
-    this.topPosts = DS.PromiseArray.create({
-      promise,
-    });
+    this.loadTopPostsTask.perform(ids);
   }
+
+  @(withTestWaiter(task(function*(ids){
+    this.topPosts = yield Promise.all(ids.map(id => this.store.findRecord('content', id)));
+  }).restartable()))
+  loadTopPostsTask;
 
   get titleId() {
     return `${this.args.tag.id}-tag`;
