@@ -1,3 +1,13 @@
+0.6.0 / 2020-08-19
+==================
+
+  * upgrade to ember-cli 3.20 and other dependencies #75 from @nickschot
+  * Fix dev dependencies and upgrade ember-showdown-prism #77 from @nickschot
+  * Replace usage of private PromiseArray with ember-concurrency task #76 from @nickschot
+  * hide the loading button for a single render so Chrome does not keep the scroll position at the loading button #73 from @nickschot
+  * close sidebar after a route transition #65 from @nickschot
+  * fix issue with ember-get-config and comments #64 from @mansona
+
 0.5.0 / 2020-07-10
 ==================
 
