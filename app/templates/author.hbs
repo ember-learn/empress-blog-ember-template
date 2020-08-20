@@ -8,11 +8,11 @@
       {{#if @model.image}}
         <img class="author-profile-image" src="{{@model.image}}" alt="{{@model.name}}" />
       {{/if}}
-      <h1 class="site-title">{{@model.name}}</h1>
+      <h1 class="site-title mb-0">{{@model.name}}</h1>
       {{#if @model.content}}
         <h2 class="author-bio">{{markdown-to-html @model.content}}</h2>
       {{/if}}
-      <div class="author-meta">
+      <div class="author-meta mt-0 mb-5">
         {{#if @model.location}}
           <div class="author-location">{{@model.location}} <span class="bull">&bull;</span></div>
         {{/if}}
@@ -22,7 +22,7 @@
           {{else}}
             No posts
           {{/if}}
-          <span class="bull">&bull;</span>
+          <span class="bull">&hyphen;</span>
         </div>
         {{#if @model.website}}
           <a class="social-link social-link-wb" href="{{@model.website}}" target="_blank" rel="noopener noreferrer"><SvgIcons::Website /></a>
@@ -40,7 +40,7 @@
 </header>
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer" role="main">
+<main id="site-main" class="site-main outer mt-5" role="main">
   <div class="inner">
     <div class="post-feed">
       <LoadPosts @model={{@model}} as |posts|>
