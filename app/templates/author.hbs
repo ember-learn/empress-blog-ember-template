@@ -8,7 +8,7 @@
       {{#if @model.image}}
         <img class="author-profile-image" src="{{@model.image}}" alt="{{@model.name}}" />
       {{/if}}
-      <h1 class="site-title mb-0">{{@model.name}}</h1>
+      <h1 class="site-title mb-0 text-muted">{{@model.name}}</h1>
       {{#if @model.content}}
         <h2 class="author-bio">{{markdown-to-html @model.content}}</h2>
       {{/if}}
