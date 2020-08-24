@@ -1,3 +1,8 @@
+0.6.1 / 2020-08-24
+==================
+
+  * update ember-showdown-prism to 2.2.0 (enables line-numbers) #78 from @nickschot
+
 0.6.0 / 2020-08-19
 ==================
 
