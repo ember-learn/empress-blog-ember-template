@@ -41,7 +41,7 @@
     "ember-concurrency": "^1.2.1",
     "ember-concurrency-test-waiter": "^0.3.2",
     "ember-moment": "^8.0.0",
-    "ember-showdown-prism": "^2.1.0",
+    "ember-showdown-prism": "^2.2.0",
     "ember-styleguide": "^4.2.1",
     "ember-svg-jar": "^2.2.3",
     "moment": "^2.27.0"
