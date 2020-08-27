@@ -1,0 +1,8 @@
+.author-meta {
+  display: flex;
+  gap: 5px;
+}
+
+.author-meta .social-link a,  .author-meta a:link, .author-meta a:visited {
+  background: none !important;
+}
