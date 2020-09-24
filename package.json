@@ -44,6 +44,7 @@
     "ember-showdown-prism": "^2.2.0",
     "ember-styleguide": "^5.0.0",
     "ember-svg-jar": "^2.2.3",
+    "ember-test-waiters": "^2.1.3",
     "moment": "^2.27.0"
   },
   "devDependencies": {
