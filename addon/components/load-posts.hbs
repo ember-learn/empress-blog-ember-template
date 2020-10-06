@@ -1,0 +1,19 @@
+<div {{did-update (fn this.loadInitial @model) @model}}>
+  {{#if this.loadInitialTask.isRunning}}
+    <div class="text-center py-5">
+      {{svg-jar "spinner" class="spinner" aria-label="Loading..."}}
+    </div>
+  {{else if this.visiblePosts.length}}
+    {{yield this.visiblePosts}}
+
+    {{#if this.showLoadMoreButton}}
+      <div class="text-center">
+        <button type="button" class="es-button" {{on "click" this.loadMore}}>Load more</button>
+      </div>
+    {{/if}}
+  {{else}}
+    <div class="text-center py-5">
+      No posts found.
+    </div>
+  {{/if}}
+</div>

@@ -1,39 +1,21 @@
-<article class="blog-post">
-  <div class="blog-post-header">
-      <h2 class="blog-post-title">
-      <LinkTo @route="post" @model={{@post.id}}>
-          {{@post.title}}
-      </LinkTo>
-      </h2>
-      <div class="blog-post-meta">
-      <time class="blog-post-date">{{moment-format @post.date 'MMM Do, YYYY'}}</time>
-      <AuthorList @post={{@post}} />
+<article ...attributes>
+  <h2 class="text-xl">{{@post.title}}</h2>
+  <div class="text-muted mt-0 mb-3">
+    <time>{{moment-format @post.date 'MMM Do, YYYY'}}</time> &ndash;
+    <AuthorList @post={{@post}} />
+  </div>
 
-      {{!-- <% if article.data.guestPost %>
-          <div class="blog-post-tag">Guest Post</div>
-      <% elsif article.data.syndicatedPost %>
-          <div class="blog-post-tag">Syndicated Post</div>
-      <% end %> --}}
-      </div>
-  </div>
-  <div class="blog-post-body">
-      {{#if @post.excerpt}}
-        {{markdown-to-html @post.excerpt}}
-      {{else}}
-        {{excerpt @post.html words="40"}}...
-      {{/if}}
-  </div>
-  <div class="blog-post-footer">
-      <LinkTo @route="post" @model={{@post.id}} class="read-more">
-        Read more...
-      </LinkTo>
-      {{!--
-      <%= link_to "Read more...", article, :class => "read-more" %>
-      <% if article.data.syndicatedPost %>
-      <div class="original-post-url">
-      Original Posted at: <%= link_to(article.data.url, article.data.url) %>
-      </div>
-      <% end %>
-      --}}
-  </div>
+  <p>
+    {{#if @post.excerpt}}
+      {{markdown-to-html @post.excerpt}}
+    {{else}}
+      {{excerpt @post.html words="40"}}...
+    {{/if}}
+  </p>
+
+  <LinkTo @route="post" @model={{@post.id}} class="es-button-secondary mt-3">
+    Read on...
+  </LinkTo>
 </article>
+
+<hr class="my-4">

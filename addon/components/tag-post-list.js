@@ -1,4 +1,8 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
+import { tracked } from '@glimmer/tracking';
+import { task } from 'ember-concurrency';
+import withTestWaiter from 'ember-concurrency-test-waiter/with-test-waiter';
 
 const topPostCount = 3;
 
@@ -9,9 +13,23 @@ const topPostCount = 3;
  *   <TagPostList @tag={{tag}} />
  */
 export default class TagPostList extends Component {
-  get topPosts() {
-    return this.args.tag.posts.slice(0, topPostCount);
+  @service store;
+
+  // this can't be a getter because returning a `DS.PromiseArray` from a getter
+  // causes an infinte loop
+  @tracked topPosts;
+
+  constructor() {
+    super(...arguments);
+
+    let ids = this.args.tag.hasMany('posts').ids().slice(0, topPostCount);
+    this.loadTopPostsTask.perform(ids);
   }
+
+  @(withTestWaiter(task(function*(ids){
+    this.topPosts = yield Promise.all(ids.map(id => this.store.findRecord('content', id)));
+  }).restartable()))
+  loadTopPostsTask;
 
   get titleId() {
     return `${this.args.tag.id}-tag`;

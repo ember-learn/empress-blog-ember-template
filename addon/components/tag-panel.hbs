@@ -1,0 +1,109 @@
+<div class="tag-panel bg-none">
+  {{#if this.recentPostsTag}}
+    <section class="tag-panel-section" data-test-recent-posts>
+      <TagPostList @tag={{this.recentPostsTag}}></TagPostList>
+    </section>
+  {{/if}}
+
+  {{#if this.releasesTag}}
+    <section class="tag-panel-section" data-test-releases>
+      <TagPostList @tag={{this.releasesTag}}></TagPostList>
+    </section>
+  {{/if}}
+
+  {{#if this.emberTimesTag}}
+    <section class="tag-panel-section" data-test-ember-times>
+      <TagPostList @tag={{this.emberTimesTag}}></TagPostList>
+    </section>
+  {{/if}}
+
+ {{#if this.yearTags.length}}
+    <section class="tag-panel-section" data-test-by-year>
+      <h3
+        id="by-year-tag-section-title"
+        class="tag-panel-section-title text-lg"
+        data-test-section-title
+      >
+        By Year
+      </h3>
+
+      <ul
+        class="tag-panel-list-inline list-unstyled"
+        aria-labelledby="by-year-tag-section-title"
+        data-test-tag-list
+      >
+        {{#each this.yearTags as |yearTag|}}
+          <li>
+            <LinkTo
+              data-test-tag-link
+              @route="tag"
+              @model={{yearTag.id}}
+            >
+              {{yearTag.name}}
+            </LinkTo>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+  {{/if}}
+
+  {{#if this.versionTags.length}}
+    <section class="tag-panel-section" data-test-by-version>
+      <h3
+        id="by-version-tag-section-title"
+        class="tag-panel-section-title text-lg"
+        data-test-section-title
+      >
+        By Major Version
+      </h3>
+
+      <ul
+        class="tag-panel-inline-section list-unstyled"
+        aria-labelledby="by-version-tag-section-title"
+        data-test-tag-list
+      >
+        {{#each this.versionTags as |versionTag|}}
+          <li>
+            <LinkTo
+              data-test-tag-link
+              @route="tag"
+              @model={{versionTag.id}}
+            >
+              {{versionTag.name}}
+            </LinkTo>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+  {{/if}}
+
+  {{#if this.subjectTags.length}}
+    <section class="tag-panel-section" data-test-by-subject>
+      <h3
+        id="by-subject-tag-section-title"
+        class="tag-panel-section-title text-lg"
+        data-test-section-title
+      >
+        By Subject
+      </h3>
+
+      <ul
+        class="list-unstyled"
+        aria-labelledby="by-subject-tag-section-title"
+        data-test-tag-list
+      >
+        {{#each this.subjectTags as |subjectTag|}}
+          <li class="my-1">
+            <LinkTo
+              data-test-tag-link
+              @route="tag"
+              @model={{subjectTag.id}}
+            >
+              {{subjectTag.name}}
+            </LinkTo>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+  {{/if}}
+</div>
