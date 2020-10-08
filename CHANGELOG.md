@@ -1,3 +1,8 @@
+0.7.0 / 2020-10-08
+==================
+
+  * Post Page implementation Emberify + Redesign #39 from @ankushdharkar and @jaredgalanis
+
 0.6.1 / 2020-08-24
 ==================
 
