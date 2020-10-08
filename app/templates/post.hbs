@@ -1,20 +1,20 @@
 {{#let @model.post as |post|}}
-<article class="post-content {{unless post.image 'no-image'}}">
-    <header class="post-content-header">
-        <h1 class="post-content-title bold">{{post.title}}</h1>
+  <article class="post-content {{unless post.image 'no-image'}}">
+    <header>
+      <h1 class="post-content-title bold">{{post.title}}</h1>
     </header>
 
-    <div class="post-meta">
-        <time class="post-date">{{moment-format post.date 'MMM Do, YYYY'}}</time>
-        <AuthorList @post={{post}} />
+    <div class="text-muted">
+      <time>{{moment-format @post.date 'MMM Do, YYYY'}}</time> &ndash;
+      <AuthorList @post={{post}} />
     </div>
 
-    <div class="post-content-body mt-2">
-        {{markdown-to-html post.content tagName=""}}
+    <div class="mt-2">
+      {{markdown-to-html post.content tagName=""}}
     </div>
 
     <hr class="my-6">
-    
+
     <Comments @post={{post}} />
-</article>
+  </article>
 {{/let}}
