@@ -1,3 +1,9 @@
+0.7.3 / 2020-10-29
+==================
+
+  * Update ember styleguide #82 from @mansona
+  * implement global loading/progress bar #81 from @nickschot
+
 0.7.1 / 2020-10-08
 ==================
 
