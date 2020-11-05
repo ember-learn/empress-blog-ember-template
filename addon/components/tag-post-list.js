@@ -22,11 +22,11 @@ export default class TagPostList extends Component {
   constructor() {
     super(...arguments);
 
-    let ids = this.args.tag.hasMany('posts').ids().slice(0, topPostCount);
-    this.loadTopPostsTask.perform(ids);
+    this.loadTopPostsTask.perform(this.args.tag);
   }
 
-  @(withTestWaiter(task(function*(ids){
+  @(withTestWaiter(task(function*(tag){
+    const ids = (yield tag._postIds).slice(0, topPostCount);
     this.topPosts = yield Promise.all(ids.map(id => this.store.findRecord('content', id)));
   }).restartable()))
   loadTopPostsTask;
