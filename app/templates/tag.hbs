@@ -1,12 +1,10 @@
 <header class="page-head">
     <h1 class="page-head-title mb-1">{{@model.name}}</h1>
-    <p class="page-head-description mb-5">
-        {{#if @model.description}}
-            {{@model.description}}
-        {{else}}
-            A collection of {{plural @model.posts.length empty='posts' singular='% post' plural='% posts'}}
-        {{/if}}
-    </p>
+    {{#if @model.description}}
+      <p class="page-head-description mb-5">
+        {{@model.description}}
+      </p>
+    {{/if}}
 </header>
 
 <div class="post-feed">
