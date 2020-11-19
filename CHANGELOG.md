@@ -1,3 +1,15 @@
+1.0.0 / 2020-11-19
+==================
+
+This is now a 1.0 release because it is ready to be used in production 🎉
+
+  * Better pagination #93 from @mansona
+  * implement author page redesign #92 from @nickschot and @claeusdev
+  * Add Ember times logo to post and tag page #90 from @mansona
+  * use stable postIds attribute instead of the unstable relationship reference #89 from @nickschot
+  * implement skeleton loader component #91 from @nickschot
+  * fix meta implementation #88 from @mansona
+
 0.7.3 / 2020-10-29
 ==================
 
