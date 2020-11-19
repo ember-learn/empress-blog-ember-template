@@ -1,6 +1,6 @@
 {
   "name": "empress-blog-ember-template",
-  "version": "0.7.2",
+  "version": "1.0.0",
   "description": "Ember template for empress-blog",
   "keywords": [
     "ember-addon",
