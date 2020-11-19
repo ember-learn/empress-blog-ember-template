@@ -1,5 +1,8 @@
 {{#let @model.post as |post|}}
   <article class="post-content {{unless post.image 'no-image'}}">
+    {{#if (eq post.primaryTag.id "newsletter")}}
+      <img class="times-logo mb-4" src="/ember-times-logo.png" alt="" role="presentation">
+    {{/if}}
     <header>
       <h1 class="post-content-title bold">{{post.title}}</h1>
     </header>

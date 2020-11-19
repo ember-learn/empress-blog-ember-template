@@ -5,3 +5,10 @@ hr {
   margin-top: var(--spacing-4);
   margin-bottom: var(--spacing-4);
 }
+
+
+.page-head-title > img.times-logo,
+.post-content > img.times-logo {
+  width: 100%;
+  max-width: 478px;
+}
