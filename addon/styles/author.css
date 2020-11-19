@@ -1,0 +1,40 @@
+a.social-link {
+  display: inline-block;
+  vertical-align: top;
+}
+
+a.social-link svg {
+  display: block;
+}
+
+a.social-link, a.social-link:link, a.social-link:visited {
+  background: none;
+}
+
+.author-header {
+  grid-column-gap: var(--grid-gap-sm);
+}
+
+.author-header h1 {
+  align-self: center;
+  margin-bottom: 0;
+}
+
+.author-image img {
+  display: block;
+}
+
+@media (min-width: 1008px) {
+  .author-header {
+    grid-row-gap: 0;
+    grid-column-gap: var(--grid-gap-md);
+  }
+
+  .author-header h1 {
+    margin-bottom: var(--spacing-2)
+  }
+
+  .author-image {
+    grid-row: 1 / span 2;
+  }
+}
