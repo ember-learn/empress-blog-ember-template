@@ -1,3 +1,9 @@
+1.0.1 / 2020-11-26
+==================
+
+  * fix overview & post view font weight & spacing discrepancy #94 from @nickschot
+  * move to GitHub actions #95 from @mansona
+
 1.0.0 / 2020-11-19
 ==================
 
