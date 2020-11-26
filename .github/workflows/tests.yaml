@@ -1,1 +1,167 @@
 name: CI
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Cache Node.js modules
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-node-
+          ${{ runner.OS }}-
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: npm run lint
+    - run: npx percy exec -- npm run test:ember
+      env:
+        CI: true
+        PERCY_TOKEN: ce5e8d59a35851ea07032b21668a6718e8daf4ac8da2f4f3fdcafc8c89dd0a0f
+
+  ember_floating_dependencies:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm install --no-package-lock
+    - run: npm run test:ember
+      env:
+        CI: true
+
+  ember_try_3_16:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+      env:
+        CI: true
+        EMBER_TRY_SCENARIO: ember-lts-3.16
+
+  ember_try_release:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+      env:
+        CI: true
+        EMBER_TRY_SCENARIO: ember-release
+
+  ember_try_beta:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+      env:
+        CI: true
+        EMBER_TRY_SCENARIO: ember-beta
+
+  ember_try_canary:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+      env:
+        CI: true
+        EMBER_TRY_SCENARIO: ember-canary
+
+  ember_try_default_with_jquery:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+      env:
+        CI: true
+        EMBER_TRY_SCENARIO: ember-default-with-jquery
+
+  ember_try_classic:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i -g npm@7
+    - run: npm ci
+    - run: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+      env:
+        CI: true
+        EMBER_TRY_SCENARIO: ember-classic
