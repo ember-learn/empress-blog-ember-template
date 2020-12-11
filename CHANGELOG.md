@@ -1,3 +1,8 @@
+1.0.2 / 2020-12-11
+==================
+
+  * Dates stay in their original timezone #97 from @jenweber
+
 1.0.1 / 2020-11-26
 ==================
 
