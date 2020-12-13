@@ -1,5 +1,4 @@
 import Component from '@glimmer/component';
-import moment from 'moment';
 import { action } from '@ember/object';
 
 import config from 'ember-get-config';
@@ -12,11 +11,11 @@ export default class CommentsComponent extends Component {
   }
 
   get useDiscourse() {
-    return moment('2019-01-01').isBefore(this.args.post.date);
+    return new Date('2019-01-01') < this.args.post.date;
   }
 
   get oldStylePostUrl() {
-    const dateUrl = moment(this.args.post.date).format('YYYY/MM/DD');
+    const dateUrl = this.args.post.date.toISOString().split('T')[0].replace(/-/g, '/');
     return `https://emberjs.com/blog/${dateUrl}/${this.args.post.id}.html`
   }
 
