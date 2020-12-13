@@ -1,3 +1,8 @@
+1.1.0 / 2020-12-13
+==================
+
+  * replace last moment usages & remove moment dependency #98 from @nickschot
+
 1.0.2 / 2020-12-11
 ==================
 
