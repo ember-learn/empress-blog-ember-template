@@ -1,3 +1,10 @@
+1.2.0 / 2021-02-04
+==================
+
+  * use new post url for discourse comments since empress-blog release #103 from @mansona
+  * force a refresh of the comment scripts when the passed in post changes #102 from @nickschot
+  * update empress-blog to v3 (only for local development) #100 from @nickschot
+
 1.1.0 / 2020-12-13
 ==================
 
