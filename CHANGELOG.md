@@ -1,4 +1,4 @@
-1.2.0 / 2021-02-04
+1.1.1 / 2021-02-04
 ==================
 
   * use new post url for discourse comments since empress-blog release #103 from @mansona
