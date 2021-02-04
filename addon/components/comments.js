@@ -1,12 +1,18 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
 
 import config from 'ember-get-config';
+import { task, timeout } from 'ember-concurrency';
 
 export default class CommentsComponent extends Component {
   scriptElementRef = null;
 
-  get showComments () {
+  // variable used to force a re-initialization of the comments when the post changes
+  @tracked renderComments = true;
+
+  // used to hide comments in non-production environments
+  get commentsEnabled () {
     return config.environment === 'production';
   }
 
@@ -17,6 +23,19 @@ export default class CommentsComponent extends Component {
   get oldStylePostUrl() {
     const dateUrl = this.args.post.date.toISOString().split('T')[0].replace(/-/g, '/');
     return `https://emberjs.com/blog/${dateUrl}/${this.args.post.id}.html`
+  }
+
+  @(task(function*() {
+    this.cleanup();
+    this.renderComments = false;
+    yield timeout(0);
+    this.renderComments = true;
+  }).keepLatest())
+  rerenderCommentsTask;
+
+  @action
+  rerenderComments() {
+    this.rerenderCommentsTask.perform();
   }
 
   @action
@@ -53,7 +72,8 @@ export default class CommentsComponent extends Component {
     this.scriptElementRef = d;
   }
 
-  willDestroy() {
+  @action
+  cleanup() {
     if (this.scriptElementRef) {
       this.scriptElementRef.parentNode.removeChild(this.scriptElementRef);
       this.scriptElementRef = null;
@@ -66,7 +86,10 @@ export default class CommentsComponent extends Component {
     if (window.disqus_config) {
       delete window.disqus_config;
     }
+  }
 
+  willDestroy() {
+    this.cleanup();
     super.willDestroy(...arguments);
   }
 }

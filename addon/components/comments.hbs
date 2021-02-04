@@ -1,21 +1,23 @@
-<section class="post-content-comments mt-5">
-  {{#if this.showComments}}
-    {{#if this.useDiscourse}}
-      <div id="discourse-comments" {{did-insert this.setupDiscourse}}></div>
-    {{else}}
-      <div id="disqus_thread" {{did-insert this.setupDisqus}}></div>
-      <noscript>
-        Please enable JavaScript to view the
-        <a href="https://disqus.com/?ref_noscript" rel="nofollow">
-          comments powered by Disqus.
-        </a>
-      </noscript>
+<section class="post-content-comments mt-5" {{did-update this.rerenderComments @post}}>
+  {{#if this.commentsEnabled}}
+    {{#if this.renderComments}}
+      {{#if this.useDiscourse}}
+        <div id="discourse-comments" {{did-insert this.setupDiscourse}}></div>
+      {{else}}
+        <div id="disqus_thread" {{did-insert this.setupDisqus}}></div>
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+            comments powered by Disqus.
+          </a>
+        </noscript>
+      {{/if}}
     {{/if}}
   {{else}}
-  <ul class="list-unstyled layout">
-    <EsCard>
-      Comments Disabled in Development and Test mode
-    </EsCard>
-  </ul>
+    <ul class="list-unstyled layout">
+      <EsCard>
+        Comments Disabled in Development and Test mode
+      </EsCard>
+    </ul>
   {{/if}}
 </section>
