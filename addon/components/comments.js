@@ -25,6 +25,16 @@ export default class CommentsComponent extends Component {
     return `https://emberjs.com/blog/${dateUrl}/${this.args.post.id}.html`
   }
 
+  get postUrl() {
+    // this allows us to keep the comments working for posts that were released
+    // before we moved to empress-blog
+    if (this.args.post.date < new Date('2021-01-01')) {
+      return this.oldStylePostUrl;
+    }
+
+    return `https://blog.emberjs.com/${this.args.post.id}/`;
+  }
+
   @(task(function*() {
     this.cleanup();
     this.renderComments = false;
@@ -42,7 +52,7 @@ export default class CommentsComponent extends Component {
   setupDiscourse() {
     window.DiscourseEmbed = {
       discourseUrl: 'https://discuss.emberjs.com/',
-      discourseEmbedUrl: this.oldStylePostUrl
+      discourseEmbedUrl: this.postUrl,
     };
 
     this.injectScript(window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js');
