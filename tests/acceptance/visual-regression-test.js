@@ -18,6 +18,9 @@ module('Acceptance | visual regression', function(hooks) {
     await visit('/2018-10-15-ember-3-5-released');
     await percySnapshot('Post - Release');
 
+    await visit('/ember-3-14-released');
+    await percySnapshot('Post - 3.14 Release');
+
     await visit('/author/chris');
     await percySnapshot('Author - Chris');
 
