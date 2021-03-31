@@ -1,11 +1,8 @@
-@import 'blockquote.css';
-
 /* remove this when we fix https://github.com/ember-learn/ember-styleguide/issues/348 */
 hr {
   margin-top: var(--spacing-4);
   margin-bottom: var(--spacing-4);
 }
-
 
 .page-head-title > img.times-logo,
 .post-content > img.times-logo {
