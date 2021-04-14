@@ -1,11 +1,13 @@
 <header class="page-head">
-    <h1 class="page-head-title mb-4">
-      {{#if (eq @model.id "newsletter")}}
-        <img class="times-logo" src="/ember-times-logo.png" alt={{@model.name}}>
-      {{else}}
+    {{#if (eq @model.id "newsletter")}}
+      <h1 class="page-head-title">
+        <img class="times-logo" src="/ember-times-logo.svg" alt={{@model.name}}>
+      </h1>
+    {{else}}
+      <h1 class="page-head-title mb-4">
         {{@model.name}}
-      {{/if}}
-    </h1>
+      </h1>
+    {{/if}}
     {{#if @model.description}}
       <p class="page-head-description mb-5">
         {{@model.description}}
