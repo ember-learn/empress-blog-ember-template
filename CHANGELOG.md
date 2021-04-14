@@ -1,3 +1,10 @@
+1.2.0 / 2021-04-14
+==================
+
+  * use the new ember-times logo #113 from @mansona
+  * Use blockquote style from ember-styleguide #110 from @theklr
+  * add a percy test that includes blockquotes #111 from @mansona
+
 1.1.2 / 2021-03-12
 ==================
 
