@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 
 export default helper(function noWidow([string]) {
   // replace last occurrence of a space with a non-breaking space
