@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Route from '@ember/routing/route';
 
 // this will be available in the ember-blog as an override too
