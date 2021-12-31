@@ -33,6 +33,7 @@
     "ember-compatibility-test": "ember try:each"
   },
   "dependencies": {
+    "@ember/test-waiters": "^3.0.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "broccoli-concat": "^4.2.4",
@@ -41,8 +42,7 @@
     "ember-cli-babel": "^7.26.10",
     "ember-cli-htmlbars": "^5.7.2",
     "ember-composable-helpers": "^3.2.0",
-    "ember-concurrency": "^1.2.1",
-    "ember-concurrency-test-waiter": "^0.3.2",
+    "ember-concurrency": "^2.2.0",
     "ember-showdown-prism": "^3.0.0",
     "ember-styleguide": "^7.0.0",
     "ember-svg-jar": "^2.3.3",
