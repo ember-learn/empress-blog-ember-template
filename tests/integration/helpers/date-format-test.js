@@ -11,6 +11,6 @@ module('Integration | Helper | date-format', function(hooks) {
 
     await render(hbs`{{date-format "2018-07-30T00:00:00.000Z"}}`);
     console.log(this.element.textContent)
-    assert.ok(this.element.textContent.includes('Jul 30, 2018'));
+    assert.dom(this.element).hasText('Jul 30, 2018');
   });
 });
