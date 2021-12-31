@@ -42,6 +42,7 @@ module.exports = async function () {
         name: 'ember-release',
         npm: {
           devDependencies: {
+            'ember-auto-import': '^2.0.0',
             'ember-source': await getChannelURL('release'),
           },
         },
@@ -50,6 +51,7 @@ module.exports = async function () {
         name: 'ember-beta',
         npm: {
           devDependencies: {
+            'ember-auto-import': '^2.0.0',
             'ember-source': await getChannelURL('beta'),
           },
         },
@@ -58,6 +60,7 @@ module.exports = async function () {
         name: 'ember-canary',
         npm: {
           devDependencies: {
+            'ember-auto-import': '^2.0.0',
             'ember-source': await getChannelURL('canary'),
           },
         },
@@ -93,8 +96,20 @@ module.exports = async function () {
           },
         },
       },
-      embroiderSafe(),
-      embroiderOptimized(),
+      embroiderSafe({
+        npm: {
+          devDependencies: {
+            'ember-auto-import': '^2.0.0',
+          },
+        },
+      }),
+      embroiderOptimized({
+        npm: {
+          devDependencies: {
+            'ember-auto-import': '^2.0.0',
+          },
+        },
+      }),
       {
         name: 'no-deprecations',
         npm: {
@@ -107,6 +122,7 @@ module.exports = async function () {
         name: 'ember-release-no-deprecations',
         npm: {
           devDependencies: {
+            'ember-auto-import': '^2.0.0',
             'ember-source': await getChannelURL('release'),
             'ember-deprecation-error': '*',
           },
