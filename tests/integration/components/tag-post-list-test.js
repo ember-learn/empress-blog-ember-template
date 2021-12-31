@@ -29,7 +29,7 @@ module('Integration | Component | tag-post-list', function(hooks) {
     let tag = await store.findRecord('tag', 'getting-started');
     this.set('tag', tag);
 
-    await render(hbs`<TagPostList @tag={{tag}} />`);
+    await render(hbs`<TagPostList @tag={{this.tag}} />`);
 
     assert.dom('[data-test-tag-name]').hasText(tag.name);
   });
@@ -38,7 +38,7 @@ module('Integration | Component | tag-post-list', function(hooks) {
     let tag = await store.findRecord('tag', 'getting-started');
     this.set('tag', tag);
 
-    await render(hbs`<TagPostList @tag={{tag}} />`);
+    await render(hbs`<TagPostList @tag={{this.tag}} />`);
 
     await waitFor('[data-test-post-link]');
 
@@ -49,7 +49,7 @@ module('Integration | Component | tag-post-list', function(hooks) {
     let tag = await store.findRecord('tag', 'getting-started');
     this.set('tag', tag);
 
-    await render(hbs`<TagPostList @tag={{tag}} />`);
+    await render(hbs`<TagPostList @tag={{this.tag}} />`);
 
     await waitFor('[data-test-post-link]');
 

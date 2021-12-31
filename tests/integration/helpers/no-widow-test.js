@@ -10,7 +10,7 @@ module('Integration | Helper | no-widow', function(hooks) {
   test('it replaces the last occurrence of a space with a non-breaking space', async function(assert) {
     this.set('inputValue', 'My title');
 
-    await render(hbs`{{no-widow inputValue}}`);
+    await render(hbs`{{no-widow this.inputValue}}`);
 
     // NOTE: there is a non-breaking space in the below string
     assert.dom(this.element).hasText('My title');
