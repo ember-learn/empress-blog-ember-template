@@ -10,3 +10,7 @@ hr {
   max-width: 478px;
   margin-left: -41px;
 }
+
+.bg-main {
+  background-color: var(--color-gray-100);
+}

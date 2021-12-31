@@ -10,7 +10,9 @@
       {{outlet}}
     </main>
 
-    <TagSidebar @tags={{this.model.tags}}/>
+    <EsSidebar>
+      <TagPanel @tags={{this.model.tags}} />
+    </EsSidebar>
   </div>
 </div>
 
