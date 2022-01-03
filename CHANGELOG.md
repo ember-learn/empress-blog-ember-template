@@ -1,3 +1,9 @@
+2.0.0 / 2022-01-03
+==================
+
+  * Breaking: Drop Node 10 and upgrade Ember #117 from @mansona
+  * simplify github ci #118 from @mansona
+
 1.2.1 / 2021-08-26
 ==================
 
