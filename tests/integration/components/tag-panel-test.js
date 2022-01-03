@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
@@ -18,7 +19,7 @@ module('Integration | Component | tag-panel', function(hooks) {
     let tags = await store.findAll('tag');
     this.set('tags', tags);
 
-    await render(hbs`<TagPanel @tags={{tags}} />`);
+    await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
     await percySnapshot('Component - tag-panel');
     assert.expect(0);
@@ -29,7 +30,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
       assert.dom('[data-test-recent-posts]').doesNotExist();
     });
@@ -38,7 +39,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let recentPostsTag = await store.findRecord('tag', 'new');
       this.set('tags', [recentPostsTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-recent-posts]');
 
       assert.dom(section).exists();
@@ -51,7 +52,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
       assert.dom('[data-test-releases]').doesNotExist();
     });
@@ -60,7 +61,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let releasesTag = await store.findRecord('tag', 'releases');
       this.set('tags', [releasesTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-releases]');
 
       assert.dom(section).exists();
@@ -73,7 +74,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
       assert.dom('[data-test-ember-times]').doesNotExist();
     });
@@ -82,7 +83,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let emberTimesTag = await store.findRecord('tag', 'newsletter');
       this.set('tags', [emberTimesTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-ember-times]');
 
       assert.dom(section).exists();
@@ -95,7 +96,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
       assert.dom('[data-test-by-year]').doesNotExist();
     });
@@ -104,7 +105,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let year2019Tag = await store.findRecord('tag', '2019');
       this.set('tags', [year2019Tag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-year]');
 
       assert.dom(section).exists();
@@ -118,7 +119,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let year2019Tag = await store.findRecord('tag', '2019');
       this.set('tags', [year2019Tag, year2018Tag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-year]');
       const tagLinks = section.querySelectorAll('[data-test-tag-link]');
 
@@ -130,7 +131,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let year2019Tag = await store.findRecord('tag', '2019');
       this.set('tags', [year2019Tag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-year]');
 
       assert.dom('[data-test-section-title]', section).hasAttribute('id', 'by-year-tag-section-title');
@@ -143,7 +144,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
       assert.dom('[data-test-by-version]').doesNotExist();
     });
@@ -152,7 +153,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let version3Tag = await store.findRecord('tag', 'version-3-x');
       this.set('tags', [version3Tag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-version]');
 
       assert.dom(section).exists();
@@ -166,7 +167,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let version3Tag = await store.findRecord('tag', 'version-3-x');
       this.set('tags', [version2Tag, version3Tag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-version]');
       const tagLinks = section.querySelectorAll('[data-test-tag-link]');
 
@@ -178,7 +179,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let version3Tag = await store.findRecord('tag', 'version-3-x');
       this.set('tags', [version3Tag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-version]');
 
       assert.dom('[data-test-section-title]', section).hasAttribute('id', 'by-version-tag-section-title');
@@ -191,7 +192,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let releasesTag = await store.findRecord('tag', 'releases');
       this.set('tags', [releasesTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
 
       assert.dom('[data-test-by-subject]').doesNotExist();
     });
@@ -200,7 +201,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-subject]');
 
       assert.dom(section).exists();
@@ -213,7 +214,7 @@ module('Integration | Component | tag-panel', function(hooks) {
       let subjectTag = await store.findRecord('tag', 'getting-started');
       this.set('tags', [subjectTag]);
 
-      await render(hbs`<TagPanel @tags={{tags}} />`);
+      await render(hbs`<TagPanel @tags={{this.tags}} />`);
       const section = this.element.querySelector('[data-test-by-subject]');
 
       assert.dom('[data-test-section-title]', section).hasAttribute('id', 'by-subject-tag-section-title');

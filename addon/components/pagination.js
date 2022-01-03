@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Component from '@glimmer/component';
 
 const matcher = /\/content\/content-(\d+).json/

@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import Service, { inject as service } from '@ember/service';
 import { htmlSafe } from '@ember/template';
 import { tracked } from '@glimmer/tracking';
