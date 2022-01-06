@@ -62,16 +62,12 @@ export default class CommentsComponent extends Component {
   @action
   setupDisqus() {
     const pageUrl = this.oldStylePostUrl;
-    window.disqus_config = function () {
-      // Replace PAGE_URL with your page's canonical URL variable
-      this.page.url = pageUrl;
+    window.DiscourseEmbed = {
+      discourseUrl: 'https://discuss.emberjs.com/',
+      discourseEmbedUrl: pageUrl
+    };
 
-      // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-      //this.page.identifier = PAGE_IDENTIFIER;
-    }
-
-    let disqus_shortname = 'emberblog';
-    this.injectScript('//' + disqus_shortname + '.disqus.com/embed.js');
+    this.injectScript(window.DiscourseEmbed.discourseUrl + 'javascripts/embed.js');
   }
 
   injectScript(src) {
