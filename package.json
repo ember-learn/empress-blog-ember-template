@@ -44,7 +44,7 @@
     "ember-composable-helpers": "^3.2.0",
     "ember-concurrency": "^2.2.0",
     "ember-showdown-prism": "^3.0.0",
-    "ember-styleguide": "^7.0.0",
+    "ember-styleguide": "^8.0.0",
     "ember-svg-jar": "^2.3.3",
     "ember-test-waiters": "^2.1.3"
   },
