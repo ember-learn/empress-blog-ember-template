@@ -1,3 +1,9 @@
+3.0.0 / 2023-04-06
+==================
+  * Breaking: Update ember-styleguide to v8 and require ember-auto-import@2 #139 from @MinThaMie
+  * Update Percy #137 from @mansona
+  * Include `version-4-x` in version tags #125 from @chriskrycho
+
 2.1.0 / 2022-01-06
 ==================
 
