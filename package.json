@@ -91,7 +91,7 @@
     "lint-to-the-future-stylelint": "^2.1.0",
     "loader.js": "^4.7.0",
     "normalize.css": "^8.0.1",
-    "prember": "^1.1.1",
+    "prember": "^2.0.0",
     "prettier": "^2.8.7",
     "qunit": "^2.19.4",
     "qunit-dom": "^2.0.0",
@@ -101,9 +101,6 @@
     "webpack": "^5.78.0"
   },
   "packageManager": "pnpm@10.18.2+sha512.9fb969fa749b3ade6035e0f109f0b8a60b5d08a1a87fdf72e337da90dcc93336e2280ca4e44f2358a649b83c17959e9993e777c2080879f3801e6f0d999ad3dd",
-  "peerDependencies": {
-    "ember-source": "^4.0.0"
-  },
   "engines": {
     "node": "20.* || 22.* || >= 24"
   },
