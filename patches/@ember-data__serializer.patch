@@ -1,0 +1,13 @@
+diff --git a/addon/json.js b/addon/json.js
+index 58ae95e3db62c2faa80ca482421abec4a670d209..6ca2756225544478ec3377343e6bc5222b4c54f4 100644
+--- a/addon/json.js
++++ b/addon/json.js
+@@ -4,7 +4,7 @@
+ import { getOwner } from '@ember/application';
+ import { assert, warn } from '@ember/debug';
+ import { get } from '@ember/object';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { isNone, typeOf } from '@ember/utils';
+ 
+ import Serializer from '@ember-data/serializer';

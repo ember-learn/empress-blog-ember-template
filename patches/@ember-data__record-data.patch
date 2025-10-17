@@ -1,0 +1,13 @@
+diff --git a/addon/-private/record-data.ts b/addon/-private/record-data.ts
+index 19a4fde8be3abf670d15fdee7030b3ee66dfdba3..85762ed116fefca9d1fdf92f5dff0212f4975274 100644
+--- a/addon/-private/record-data.ts
++++ b/addon/-private/record-data.ts
+@@ -2,7 +2,7 @@
+  * @module @ember-data/record-data
+  */
+ import { assert } from '@ember/debug';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { _backburner as emberBackburner } from '@ember/runloop';
+ import { isEqual } from '@ember/utils';
+ 

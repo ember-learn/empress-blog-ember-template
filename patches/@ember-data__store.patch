@@ -1,0 +1,152 @@
+diff --git a/addon/-private/identifiers/cache.ts b/addon/-private/identifiers/cache.ts
+index f03747f5178107c841c972b93418788b6c248784..e85c2674205419cdc055548f382b8633cf262b6e 100644
+--- a/addon/-private/identifiers/cache.ts
++++ b/addon/-private/identifiers/cache.ts
+@@ -2,7 +2,7 @@
+   @module @ember-data/store
+ */
+ import { warn } from '@ember/debug';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { DEBUG } from '@glimmer/env';
+ 
+ import coerceId from '../system/coerce-id';
+@@ -101,14 +101,14 @@ if (DEBUG) {
+ 
+ /**
+  * Each instance of {Store} receives a unique instance of a IdentifierCache.
+- * 
++ *
+  * This cache is responsible for assigning or retrieving the unique identify
+  * for arbitrary resource data encountered by the store. Data representing
+  * a unique resource or record should always be represented by the same
+  * identifier.
+- * 
++ *
+  * It can be configured by consuming applications.
+- * 
++ *
+  * @class IdentifierCache
+    @public
+  */
+@@ -300,7 +300,7 @@ export class IdentifierCache {
+     - this referential stability of the object itself is guaranteed
+ 
+     @method getOrCreateRecordIdentifier
+-    @param resource 
++    @param resource
+     @returns {StableRecordIdentifier}
+     @public
+   */
+@@ -362,8 +362,8 @@ export class IdentifierCache {
+     `forgetRecordIdentifier` codepaths.
+ 
+     @method updateRecordIdentifier
+-    @param identifierObject 
+-    @param data 
++    @param identifierObject
++    @param data
+     @returns {StableRecordIdentifier}
+     @public
+   */
+diff --git a/addon/-private/system/core-store.ts b/addon/-private/system/core-store.ts
+index f7eb8b96bd70abb8b8ebf5beb8a755853e38adc6..5d16cd85ea17fee5f31c0f195c7dfc74396a2c42 100644
+--- a/addon/-private/system/core-store.ts
++++ b/addon/-private/system/core-store.ts
+@@ -5,7 +5,7 @@ import { getOwner } from '@ember/application';
+ import { A } from '@ember/array';
+ import { assert, deprecate, inspect, warn } from '@ember/debug';
+ import { computed, defineProperty, get, set } from '@ember/object';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { _backburner as emberBackburner } from '@ember/runloop';
+ import Service from '@ember/service';
+ import { registerWaiter, unregisterWaiter } from '@ember/test';
+diff --git a/addon/-private/system/ds-model-store.ts b/addon/-private/system/ds-model-store.ts
+index 31656afb9c98c5a21801c7ced78d2764fea2558d..e739d7c6a44c0778ffc79b1332cb46346a7fd3a9 100644
+--- a/addon/-private/system/ds-model-store.ts
++++ b/addon/-private/system/ds-model-store.ts
+@@ -1,6 +1,6 @@
+ import { getOwner, setOwner } from '@ember/application';
+ import { assert, deprecate } from '@ember/debug';
+-import EmberError from '@ember/error';
++const EmberError = Error;
+ import { get } from '@ember/object';
+ import { isPresent } from '@ember/utils';
+ import { DEBUG } from '@glimmer/env';
+diff --git a/addon/-private/system/model/internal-model.ts b/addon/-private/system/model/internal-model.ts
+index 3f0354909bb91004389dfb5884db3e9846518f41..4198b06f8a6eb636aafd1ce60b313a8ce7981c25 100644
+--- a/addon/-private/system/model/internal-model.ts
++++ b/addon/-private/system/model/internal-model.ts
+@@ -1,9 +1,9 @@
+ import { getOwner, setOwner } from '@ember/application';
+ import { A, default as EmberArray } from '@ember/array';
+ import { assert, inspect } from '@ember/debug';
+-import EmberError from '@ember/error';
++const EmberError = Error;
+ import { get, set } from '@ember/object';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { _backburner as emberBackburner, cancel, run } from '@ember/runloop';
+ import { DEBUG } from '@glimmer/env';
+ 
+diff --git a/addon/-private/system/record-array-manager.js b/addon/-private/system/record-array-manager.js
+index 1d7210ecb8dff32e9dbf6d57e97293430f6a466d..a9bbc288b4ea492f2d1d8130cc27dd9c4b20022b 100644
+--- a/addon/-private/system/record-array-manager.js
++++ b/addon/-private/system/record-array-manager.js
+@@ -5,7 +5,7 @@
+ import { A } from '@ember/array';
+ import { assert } from '@ember/debug';
+ import { get, set } from '@ember/object';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { _backburner as emberBackburner } from '@ember/runloop';
+ 
+ import { REMOVE_RECORD_ARRAY_MANAGER_LEGACY_COMPAT } from '@ember-data/canary-features';
+diff --git a/addon/-private/system/record-arrays/adapter-populated-record-array.js b/addon/-private/system/record-arrays/adapter-populated-record-array.js
+index 28d13b3456db2653dc403c69adaa398c8d1b8dea..1cf1dfd240c7edc454fab9e942dd08f3a43ee677 100644
+--- a/addon/-private/system/record-arrays/adapter-populated-record-array.js
++++ b/addon/-private/system/record-arrays/adapter-populated-record-array.js
+@@ -1,6 +1,6 @@
+ import { A } from '@ember/array';
+ import { get } from '@ember/object';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { once } from '@ember/runloop';
+ import { DEBUG } from '@glimmer/env';
+ 
+diff --git a/addon/-private/system/snapshot.ts b/addon/-private/system/snapshot.ts
+index a0f61bc7408bb02b70431f206f0748451d0bdb5c..23bba80cfffc4455c4e7133ffe8971908c38e8d8 100644
+--- a/addon/-private/system/snapshot.ts
++++ b/addon/-private/system/snapshot.ts
+@@ -3,7 +3,7 @@
+ */
+ import { assert } from '@ember/debug';
+ import { get } from '@ember/object';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ 
+ import { CUSTOM_MODEL_CLASS } from '@ember-data/canary-features';
+ import { HAS_RECORD_DATA_PACKAGE } from '@ember-data/private-build-infra';
+@@ -36,8 +36,8 @@ export type PrivateSnapshot = ProtoExntends<Snapshot, _PrivateSnapshot>;
+ /**
+   Snapshot is not directly instantiable.
+   Instances are provided to a consuming application's
+-  adapters and serializers for certain requests.  
+-  
++  adapters and serializers for certain requests.
++
+   @class Snapshot
+   @public
+ */
+diff --git a/addon/-private/system/store/finders.js b/addon/-private/system/store/finders.js
+index 22a70ebf55d5b57551c50a83e18562d8c30d04f0..3eeaa3283a454b3ba33633631022e03d9910e67c 100644
+--- a/addon/-private/system/store/finders.js
++++ b/addon/-private/system/store/finders.js
+@@ -1,5 +1,5 @@
+ import { assert, deprecate, warn } from '@ember/debug';
+-import { assign } from '@ember/polyfills';
++const assign = Object.assign;
+ import { DEBUG } from '@glimmer/env';
+ 
+ import { Promise } from 'rsvp';

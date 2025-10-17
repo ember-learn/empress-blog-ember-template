@@ -1,0 +1,30 @@
+diff --git a/addon/index.js b/addon/index.js
+index 6d7e49c05565dac8b8c72195022f214b1552bd0a..654cf07c96a2c8e80d53967198e1feadfae67ca5 100644
+--- a/addon/index.js
++++ b/addon/index.js
+@@ -1,6 +1,6 @@
+ import 'ember-inflector';
+ 
+-import EmberError from '@ember/error';
++const EmberError = Error;
+ import { VERSION } from '@ember/version';
+ 
+ import require, { has } from 'require';
+diff --git a/addon/setup-container.js b/addon/setup-container.js
+index c951048d650e3cc90571daf411db327063f23128..88c191d28acd7736188611476d2d65eabe2b2e94 100644
+--- a/addon/setup-container.js
++++ b/addon/setup-container.js
+@@ -46,13 +46,6 @@ function initializeStore(application) {
+   }
+ }
+ 
+-function initializeStoreInjections(application) {
+-  let inject = application.inject || application.injection;
+-  inject.call(application, 'controller', 'store', 'service:store');
+-  inject.call(application, 'route', 'store', 'service:store');
+-}
+-
+ export default function setupContainer(application) {
+-  initializeStoreInjections(application);
+   initializeStore(application);
+ }
