@@ -50,7 +50,7 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
-    "@embroider/test-setup": "^0.48.1",
+    "@embroider/test-setup": "^4.0.0",
     "@percy/cli": "^1.21.0",
     "@percy/ember": "^3.0.1",
     "auto-changelog": "github:mansona/auto-changelog#epic",
