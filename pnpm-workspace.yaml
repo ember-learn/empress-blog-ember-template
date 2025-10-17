@@ -1,0 +1,7 @@
+patchedDependencies:
+  '@ember-data/adapter': patches/@ember-data__adapter.patch
+  '@ember-data/model': patches/@ember-data__model.patch
+  '@ember-data/record-data': patches/@ember-data__record-data.patch
+  '@ember-data/serializer': patches/@ember-data__serializer.patch
+  '@ember-data/store': patches/@ember-data__store.patch
+  ember-data: patches/ember-data.patch

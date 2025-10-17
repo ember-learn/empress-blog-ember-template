@@ -4,6 +4,26 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@ember-data/adapter':
+    hash: bc1893c3410ec079b3a627a9b5bc52111ac3ae7a415bca2ce138fdd4552edee1
+    path: patches/@ember-data__adapter.patch
+  '@ember-data/model':
+    hash: 61d667f489f595f4159bce5aec7cbabb3c2c0a7f8179aed0a46f07c478c0bf88
+    path: patches/@ember-data__model.patch
+  '@ember-data/record-data':
+    hash: 7dd8b76b9db740c2fe32f30a1ec72a1dc6fa276a1f56b4dd485fdfb603100357
+    path: patches/@ember-data__record-data.patch
+  '@ember-data/serializer':
+    hash: a0e782c1188aa060fd33ffd8631f71be99a8fec579e2af519cc9e1de5d0d37eb
+    path: patches/@ember-data__serializer.patch
+  '@ember-data/store':
+    hash: 0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959
+    path: patches/@ember-data__store.patch
+  ember-data:
+    hash: fb0b0ca87f834ca1d65516ae644e9d59a6b506bb6f566d9af5a67c23daa36629
+    path: patches/ember-data.patch
+
 importers:
 
   .:
@@ -107,7 +127,7 @@ importers:
         version: 4.0.2
       ember-data:
         specifier: ~3.28.0
-        version: 3.28.13(@babel/core@7.28.4)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.102.1))
+        version: 3.28.13(patch_hash=fb0b0ca87f834ca1d65516ae644e9d59a6b506bb6f566d9af5a67c23daa36629)(@babel/core@7.28.4)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.102.1))
       ember-fetch:
         specifier: ^8.1.1
         version: 8.1.2(encoding@0.1.13)
@@ -8435,10 +8455,10 @@ snapshots:
     dependencies:
       postcss-selector-parser: 6.1.2
 
-  '@ember-data/adapter@3.28.13(@babel/core@7.28.4)':
+  '@ember-data/adapter@3.28.13(patch_hash=bc1893c3410ec079b3a627a9b5bc52111ac3ae7a415bca2ce138fdd4552edee1)(@babel/core@7.28.4)':
     dependencies:
       '@ember-data/private-build-infra': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/store': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/store': 3.28.13(patch_hash=0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959)(@babel/core@7.28.4)
       '@ember/edition-utils': 1.2.0
       '@ember/string': 3.1.1
       ember-cli-babel: 7.26.11
@@ -8467,11 +8487,11 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  '@ember-data/model@3.28.13(@babel/core@7.28.4)':
+  '@ember-data/model@3.28.13(patch_hash=61d667f489f595f4159bce5aec7cbabb3c2c0a7f8179aed0a46f07c478c0bf88)(@babel/core@7.28.4)':
     dependencies:
       '@ember-data/canary-features': 3.28.13
       '@ember-data/private-build-infra': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/store': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/store': 3.28.13(patch_hash=0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959)(@babel/core@7.28.4)
       '@ember/edition-utils': 1.2.0
       '@ember/string': 3.1.1
       ember-cached-decorator-polyfill: 0.1.4(@babel/core@7.28.4)
@@ -8517,11 +8537,11 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  '@ember-data/record-data@3.28.13(@babel/core@7.28.4)':
+  '@ember-data/record-data@3.28.13(patch_hash=7dd8b76b9db740c2fe32f30a1ec72a1dc6fa276a1f56b4dd485fdfb603100357)(@babel/core@7.28.4)':
     dependencies:
       '@ember-data/canary-features': 3.28.13
       '@ember-data/private-build-infra': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/store': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/store': 3.28.13(patch_hash=0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959)(@babel/core@7.28.4)
       '@ember/edition-utils': 1.2.0
       ember-cli-babel: 7.26.11
       ember-cli-test-info: 1.0.0
@@ -8532,10 +8552,10 @@ snapshots:
 
   '@ember-data/rfc395-data@0.0.4': {}
 
-  '@ember-data/serializer@3.28.13(@babel/core@7.28.4)':
+  '@ember-data/serializer@3.28.13(patch_hash=a0e782c1188aa060fd33ffd8631f71be99a8fec579e2af519cc9e1de5d0d37eb)(@babel/core@7.28.4)':
     dependencies:
       '@ember-data/private-build-infra': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/store': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/store': 3.28.13(patch_hash=0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959)(@babel/core@7.28.4)
       ember-cli-babel: 7.26.11
       ember-cli-test-info: 1.0.0
       ember-cli-typescript: 4.2.1
@@ -8543,7 +8563,7 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  '@ember-data/store@3.28.13(@babel/core@7.28.4)':
+  '@ember-data/store@3.28.13(patch_hash=0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959)(@babel/core@7.28.4)':
     dependencies:
       '@ember-data/canary-features': 3.28.13
       '@ember-data/private-build-infra': 3.28.13(@babel/core@7.28.4)
@@ -12066,15 +12086,15 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-data@3.28.13(@babel/core@7.28.4)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.102.1)):
+  ember-data@3.28.13(patch_hash=fb0b0ca87f834ca1d65516ae644e9d59a6b506bb6f566d9af5a67c23daa36629)(@babel/core@7.28.4)(ember-source@5.12.0(@glimmer/component@1.1.2(@babel/core@7.28.4))(rsvp@4.8.5)(webpack@5.102.1)):
     dependencies:
-      '@ember-data/adapter': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/adapter': 3.28.13(patch_hash=bc1893c3410ec079b3a627a9b5bc52111ac3ae7a415bca2ce138fdd4552edee1)(@babel/core@7.28.4)
       '@ember-data/debug': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/model': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/model': 3.28.13(patch_hash=61d667f489f595f4159bce5aec7cbabb3c2c0a7f8179aed0a46f07c478c0bf88)(@babel/core@7.28.4)
       '@ember-data/private-build-infra': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/record-data': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/serializer': 3.28.13(@babel/core@7.28.4)
-      '@ember-data/store': 3.28.13(@babel/core@7.28.4)
+      '@ember-data/record-data': 3.28.13(patch_hash=7dd8b76b9db740c2fe32f30a1ec72a1dc6fa276a1f56b4dd485fdfb603100357)(@babel/core@7.28.4)
+      '@ember-data/serializer': 3.28.13(patch_hash=a0e782c1188aa060fd33ffd8631f71be99a8fec579e2af519cc9e1de5d0d37eb)(@babel/core@7.28.4)
+      '@ember-data/store': 3.28.13(patch_hash=0217fc3aa30af6ae9ae6bfbbf461b201ef72bebde71b92403f653a8bdfaf8959)(@babel/core@7.28.4)
       '@ember/edition-utils': 1.2.0
       '@ember/string': 3.1.1
       '@glimmer/env': 0.1.7

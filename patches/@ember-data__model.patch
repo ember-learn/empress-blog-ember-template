@@ -1,0 +1,26 @@
+diff --git a/addon/-private/model.js b/addon/-private/model.js
+index 1e10c4f6215bf1ef57fb49217b29515b09034797..85149c88a5f9e5de862791c770b0dff34f31ec89 100644
+--- a/addon/-private/model.js
++++ b/addon/-private/model.js
+@@ -3,7 +3,7 @@
+  */
+ 
+ import { assert, deprecate, warn } from '@ember/debug';
+-import EmberError from '@ember/error';
++const EmberError = Error;
+ import EmberObject, { get } from '@ember/object';
+ import { dependentKeyCompat } from '@ember/object/compat';
+ import { run } from '@ember/runloop';
+@@ -104,10 +104,10 @@ function computeOnce(target, key, desc) {
+ 
+ /**
+   Base class from which Models can be define.
+-  
++
+   ```js
+   import Model, { attr } from '@ember-data/model';
+-  
++
+   export default class User extends Model {
+     @attr name;
+   }
