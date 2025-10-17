@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14.x
-          cache: npm
-      - run: npm i -g npm@7
-      - run: npm ci
-      - run: npm run lint
-      - run: npx percy exec -- npm run test:ember
+          node-version: 20.x
+          cache: pnpm
+      - run: pnpm i
+      - run: pnpm run lint
+      - run: pnpm percy exec -- npm run test:ember
         env:
           CI: true
           PERCY_TOKEN: ce5e8d59a35851ea07032b21668a6718e8daf4ac8da2f4f3fdcafc8c89dd0a0f
@@ -35,14 +35,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14.x
-          cache: npm
-      - run: npm i -g npm@7
-      - run: npm install --no-shrinkwrap
-      - run: npm run test:ember
+          node-version: 20.x
+          cache: pnpm
+      - run: pnpm install --no-lockfile
+      - run: pnpm run test:ember
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -68,12 +68,12 @@ jobs:
           - ember-release-no-deprecations
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 14.x
-          cache: npm
-      - run: npm i -g npm@7
-      - run: npm ci
+          node-version: 20.x
+          cache: pnpm
+      - run: pnpm i
       - name: Run Tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: pnpm ember try:one ${{ matrix.try-scenario }}
