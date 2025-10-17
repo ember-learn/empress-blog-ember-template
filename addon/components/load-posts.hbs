@@ -1,3 +1,4 @@
+{{! template-lint-disable no-at-ember-render-modifiers }}
 <div {{did-update (fn this.loadInitial @model) @model}}>
   {{#if this.loadInitialTask.isRunning}}
     <SkeletonLoader class="text-center">
