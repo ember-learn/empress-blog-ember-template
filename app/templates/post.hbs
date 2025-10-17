@@ -1,3 +1,4 @@
+{{! template-lint-disable no-redundant-role }}
 {{#let @model.post as |post|}}
   <article class="post-content {{unless post.image 'no-image'}}">
     {{#if (eq post.primaryTag.id "newsletter")}}

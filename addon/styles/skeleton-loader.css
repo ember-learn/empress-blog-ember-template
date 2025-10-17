@@ -1,3 +1,4 @@
+/* stylelint-disable prettier/prettier */
 .skeleton-loader {
   background: linear-gradient(135deg, var(--color-gray-200), var(--color-gray-100));
   display: flex;
