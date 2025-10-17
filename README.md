@@ -6,7 +6,6 @@ For more information about empress-blog [read the empress-blog
 documentation](https://github.com/empress/empress-blog/blob/master/README.md) but if you want to
 get started straight away, try the quick start below.
 
-
 ## Compatibility
 
 * Ember.js v3.16 or above
@@ -34,7 +33,6 @@ be able to navigate to  [http://localhost:4200](http://localhost:4200) to see th
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
 
 ## License
 
