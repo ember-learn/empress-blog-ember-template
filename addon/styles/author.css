@@ -1,3 +1,4 @@
+/* stylelint-disable declaration-block-no-redundant-longhand-properties, media-feature-range-notation, prettier/prettier */
 a.social-link {
   display: inline-block;
   vertical-align: top;
