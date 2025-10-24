@@ -1,0 +1,26 @@
+{
+  "solution": {
+    "empress-blog-ember-template": {
+      "impact": "major",
+      "oldVersion": "3.0.0",
+      "newVersion": "4.0.0",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
+        },
+        {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2025-10-24)\n\n* empress-blog-ember-template 4.0.0 (major)\n\n#### :boom: Breaking Change\n* `empress-blog-ember-template`\n  * [#142](https://github.com/ember-learn/empress-blog-ember-template/pull/142) feat: use `ember-showdown-shiki` for syntax highlighting ([@IgnaceMaes](https://github.com/IgnaceMaes))\n  * [#144](https://github.com/ember-learn/empress-blog-ember-template/pull/144) swap to pnpm and drop support for node <20 ([@mansona](https://github.com/mansona))\n\n#### :rocket: Enhancement\n* `empress-blog-ember-template`\n  * [#141](https://github.com/ember-learn/empress-blog-ember-template/pull/141) include version-5 in tags ([@IgnaceMaes](https://github.com/IgnaceMaes))\n  * [#115](https://github.com/ember-learn/empress-blog-ember-template/pull/115) Replace ProgressBar with ember-styleguide components ([@aoifehannigan](https://github.com/aoifehannigan))\n\n#### :house: Internal\n* `empress-blog-ember-template`\n  * [#145](https://github.com/ember-learn/empress-blog-ember-template/pull/145) start using release-plan ([@mansona](https://github.com/mansona))\n  * [#146](https://github.com/ember-learn/empress-blog-ember-template/pull/146) update to v4.12 with ember-cli-update ([@mansona](https://github.com/mansona))\n\n#### Committers: 3\n- Aoife Hannigan ([@aoifehannigan](https://github.com/aoifehannigan))\n- Chris Manson ([@mansona](https://github.com/mansona))\n- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))\n"
+}
