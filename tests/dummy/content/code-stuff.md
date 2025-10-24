@@ -4,7 +4,6 @@ authors:
   - chris
 date: 2025-10-20T00:00:00.000Z
 tags:
-  - getting-started
 ---
 
 Here is a basic GJS file
