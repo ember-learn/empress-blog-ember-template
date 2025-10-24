@@ -7,7 +7,7 @@
 
   <p>
     {{#if @post.excerpt}}
-      {{markdown-to-html @post.excerpt}}
+      <MarkdownToHtml @markdown={{@post.excerpt}} />
     {{else}}
       {{excerpt @post.html words="40"}}...
     {{/if}}
