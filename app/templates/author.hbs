@@ -12,7 +12,7 @@
   <h1 class="text-hero-xl mt-0 sm:col-3 lg-start:2 lg:col-5">{{@model.name}}</h1>
   <div class="sm:col-4 lg:col-5">
     {{#if @model.content}}
-      {{markdown-to-html @model.content tagName=""}}
+      <MarkdownToHtml @markdown={{@model.content}} />
     {{/if}}
     <div class="mt-1">
       {{#if @model.location}}
