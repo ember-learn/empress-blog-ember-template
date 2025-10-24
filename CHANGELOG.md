@@ -1,3 +1,5 @@
+# Changelog
+
 3.0.0 / 2023-04-06
 ==================
   * Breaking: Update ember-styleguide to v8 and require ember-auto-import@2 #139 from @MinThaMie
