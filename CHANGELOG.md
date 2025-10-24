@@ -1,5 +1,29 @@
 # Changelog
 
+## Release (2025-10-24)
+
+* empress-blog-ember-template 4.0.0 (major)
+
+#### :boom: Breaking Change
+* `empress-blog-ember-template`
+  * [#142](https://github.com/ember-learn/empress-blog-ember-template/pull/142) feat: use `ember-showdown-shiki` for syntax highlighting ([@IgnaceMaes](https://github.com/IgnaceMaes))
+  * [#144](https://github.com/ember-learn/empress-blog-ember-template/pull/144) swap to pnpm and drop support for node <20 ([@mansona](https://github.com/mansona))
+
+#### :rocket: Enhancement
+* `empress-blog-ember-template`
+  * [#141](https://github.com/ember-learn/empress-blog-ember-template/pull/141) include version-5 in tags ([@IgnaceMaes](https://github.com/IgnaceMaes))
+  * [#115](https://github.com/ember-learn/empress-blog-ember-template/pull/115) Replace ProgressBar with ember-styleguide components ([@aoifehannigan](https://github.com/aoifehannigan))
+
+#### :house: Internal
+* `empress-blog-ember-template`
+  * [#145](https://github.com/ember-learn/empress-blog-ember-template/pull/145) start using release-plan ([@mansona](https://github.com/mansona))
+  * [#146](https://github.com/ember-learn/empress-blog-ember-template/pull/146) update to v4.12 with ember-cli-update ([@mansona](https://github.com/mansona))
+
+#### Committers: 3
+- Aoife Hannigan ([@aoifehannigan](https://github.com/aoifehannigan))
+- Chris Manson ([@mansona](https://github.com/mansona))
+- Ignace Maes ([@IgnaceMaes](https://github.com/IgnaceMaes))
+
 3.0.0 / 2023-04-06
 ==================
   * Breaking: Update ember-styleguide to v8 and require ember-auto-import@2 #139 from @MinThaMie
