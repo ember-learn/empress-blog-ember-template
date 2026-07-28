@@ -1,0 +1,7 @@
+# Unlabeled Changes
+
+* `empress-blog-ember-template`
+  * [#143](https://github.com/ember-learn/empress-blog-ember-template/pull/143) Add version 6.x to version tags ([@kategengler](https://github.com/kategengler))
+
+
+*Cannot plan release until the above changes are labeled*.
